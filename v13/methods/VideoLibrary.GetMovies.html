@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.GetMovies - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.GetMovies</h1><p>Retrieve all movies</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><p class="muted">Page through the movie library with selected properties</p><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 5,
+  &quot;method&quot;: &quot;VideoLibrary.GetMovies&quot;,
+  &quot;params&quot;: {
+    &quot;properties&quot;: [
+      &quot;title&quot;,
+      &quot;year&quot;,
+      &quot;rating&quot;
+    ],
+    &quot;limits&quot;: {
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 2
+    }
+  }
+}</code></pre><h2>Response</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 5,
+  &quot;result&quot;: {
+    &quot;limits&quot;: {
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 2,
+      &quot;total&quot;: 245
+    },
+    &quot;movies&quot;: [
+      {
+        &quot;movieid&quot;: 1,
+        &quot;label&quot;: &quot;The Matrix&quot;,
+        &quot;title&quot;: &quot;The Matrix&quot;,
+        &quot;year&quot;: 1999,
+        &quot;rating&quot;: 8.7
+      },
+      {
+        &quot;movieid&quot;: 2,
+        &quot;label&quot;: &quot;Spirited Away&quot;,
+        &quot;title&quot;: &quot;Spirited Away&quot;,
+        &quot;year&quot;: 2001,
+        &quot;rating&quot;: 8.6
+      }
+    ]
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>properties</code></td><td><a href="../../v13/types/Video.Fields.Movie.html">Video.Fields.Movie</a></td><td>No</td><td></td><td></td></tr><tr><td><code>limits</code></td><td><a href="../../v13/types/List.Limits.html">List.Limits</a></td><td>No</td><td></td><td></td></tr><tr><td><code>sort</code></td><td><a href="../../v13/types/List.Sort.html">List.Sort</a></td><td>No</td><td></td><td></td></tr><tr><td><code>filter</code></td><td><ul class="branches"><li>object <span class="props">{genreid}</span></li><li>object <span class="props">{genre}</span></li><li>object <span class="props">{year}</span></li><li>object <span class="props">{actor}</span></li><li>object <span class="props">{director}</span></li><li>object <span class="props">{studio}</span></li><li>object <span class="props">{country}</span></li><li>object <span class="props">{setid}</span></li><li>object <span class="props">{set}</span></li><li>object <span class="props">{tag}</span></li><li><a href="../../v13/types/List.Filter.Movies.html">List.Filter.Movies</a></li></ul></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>limits</code></td><td><a href="../../v13/types/List.LimitsReturned.html">List.LimitsReturned</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>movies</code></td><td>array of <a href="../../v13/types/Video.Details.Movie.html">Video.Details.Movie</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Retrieve all movies&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;properties&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Video.Fields.Movie&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;limits&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.Limits&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;sort&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.Sort&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;filter&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;genreid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;genreid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;genre&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;genre&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;year&quot;: {
+                &quot;type&quot;: &quot;integer&quot;,
+                &quot;minimum&quot;: 0
+              }
+            },
+            &quot;required&quot;: [
+              &quot;year&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;actor&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;actor&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;director&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;director&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;studio&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;studio&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;country&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;country&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;setid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;setid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;set&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;set&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;tag&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;tag&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/List.Filter.Movies&quot;
+          }
+        ]
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;limits&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.LimitsReturned&quot;
+      },
+      &quot;movies&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;items&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Video.Details.Movie&quot;
+        }
+      }
+    },
+    &quot;required&quot;: [
+      &quot;limits&quot;
+    ]
+  }
+}</code></pre></details></main>
+</body>
+</html>

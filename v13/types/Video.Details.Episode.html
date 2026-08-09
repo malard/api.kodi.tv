@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video.Details.Episode - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Video">Video</a></p><h1>Video.Details.Episode</h1><p>Extends <a href="../../v13/types/Video.Details.File.html">Video.Details.File</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>episodeid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>votes</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>rating</code></td><td>number</td><td>No</td><td></td><td></td></tr><tr><td><code>writer</code></td><td><a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>firstaired</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>productioncode</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>season</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>episode</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>uniqueid</code></td><td><a href="../../v13/types/Media.UniqueID.html">Media.UniqueID</a></td><td>No</td><td></td><td></td></tr><tr><td><code>originaltitle</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>showtitle</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>cast</code></td><td><a href="../../v13/types/Video.Cast.html">Video.Cast</a></td><td>No</td><td></td><td></td></tr><tr><td><code>tvshowid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>specialsortseason</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>specialsortepisode</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>userrating</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>seasonid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>ratings</code></td><td>Video.Ratings</td><td>No</td><td></td><td></td></tr><tr><td><code>studio</code></td><td><a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>genre</code></td><td><a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/VideoLibrary.GetEpisodes.html">VideoLibrary.GetEpisodes</a> <span class="muted">(method)</span></li><li><a href="../methods/VideoLibrary.GetEpisodeDetails.html">VideoLibrary.GetEpisodeDetails</a> <span class="muted">(method)</span></li><li><a href="../methods/VideoLibrary.GetRecentlyAddedEpisodes.html">VideoLibrary.GetRecentlyAddedEpisodes</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Video.Details.File&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;episodeid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;votes&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;rating&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;writer&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;firstaired&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;productioncode&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;season&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;episode&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;uniqueid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Media.UniqueID&quot;
+    },
+    &quot;originaltitle&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;showtitle&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;cast&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Video.Cast&quot;
+    },
+    &quot;tvshowid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;specialsortseason&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;specialsortepisode&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;userrating&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;seasonid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;ratings&quot;: {
+      &quot;type&quot;: &quot;Video.Ratings&quot;
+    },
+    &quot;studio&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;genre&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;episodeid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

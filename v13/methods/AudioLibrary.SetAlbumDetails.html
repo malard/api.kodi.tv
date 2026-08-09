@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AudioLibrary.SetAlbumDetails - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#AudioLibrary">AudioLibrary</a></p><h1>AudioLibrary.SetAlbumDetails</h1><p>Update the given album with the given details</p><p class="meta"><span class="badge">Permission: UpdateData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;AudioLibrary.SetAlbumDetails&quot;,
+  &quot;params&quot;: {
+    &quot;albumid&quot;: &quot;&lt;Library.Id&gt;&quot;,
+    &quot;title&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;artist&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;description&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;genre&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;theme&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;mood&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;style&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;type&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;albumlabel&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;rating&quot;: &quot;&lt;Optional.Number&gt;&quot;,
+    &quot;year&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;userrating&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;votes&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;musicbrainzalbumid&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;musicbrainzreleasegroupid&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;sortartist&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;displayartist&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;musicbrainzalbumartistid&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;art&quot;: &quot;&lt;null | Media.Artwork.Set&gt;&quot;,
+    &quot;isboxset&quot;: &quot;&lt;Optional.Boolean&gt;&quot;,
+    &quot;releasedate&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;originaldate&quot;: &quot;&lt;Optional.String&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>albumid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>description</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>genre</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>theme</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>mood</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>style</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>type</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>albumlabel</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>rating</code></td><td><a href="../../v13/types/Optional.Number.html">Optional.Number</a></td><td>No</td><td></td><td></td></tr><tr><td><code>year</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>userrating</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>votes</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainzalbumid</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainzreleasegroupid</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>sortartist</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>displayartist</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainzalbumartistid</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>art</code></td><td>null | <a href="../../v13/types/Media.Artwork.Set.html">Media.Artwork.Set</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>isboxset</code></td><td><a href="../../v13/types/Optional.Boolean.html">Optional.Boolean</a></td><td>No</td><td></td><td></td></tr><tr><td><code>releasedate</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>originaldate</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Update the given album with the given details&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;UpdateData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;albumid&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;title&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;artist&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;description&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;genre&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;theme&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;mood&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;style&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;type&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;albumlabel&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;rating&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Number&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;year&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;userrating&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;votes&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;musicbrainzalbumid&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;musicbrainzreleasegroupid&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;sortartist&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;displayartist&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;musicbrainzalbumartistid&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;art&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Media.Artwork.Set&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;isboxset&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Boolean&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;releasedate&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;originaldate&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

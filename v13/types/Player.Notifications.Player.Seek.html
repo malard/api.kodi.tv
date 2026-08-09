@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.Notifications.Player.Seek - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.Notifications.Player.Seek</h1><p>Extends <a href="../../v13/types/Player.Notifications.Player.html">Player.Notifications.Player</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>time</code></td><td><a href="../../v13/types/Global.Time.html">Global.Time</a></td><td>No</td><td></td><td></td></tr><tr><td><code>seekoffset</code></td><td><a href="../../v13/types/Global.Time.html">Global.Time</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../notifications/Player.OnSeek.html">Player.OnSeek</a> <span class="muted">(notification)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Notifications.Player&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;time&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Global.Time&quot;
+    },
+    &quot;seekoffset&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Global.Time&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

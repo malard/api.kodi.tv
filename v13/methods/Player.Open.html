@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.Open - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.Open</h1><p>Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.</p><p class="meta"><span class="badge">Permission: ControlPlayback</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><p class="muted">Start playback of a movie from the video library</p><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 3,
+  &quot;method&quot;: &quot;Player.Open&quot;,
+  &quot;params&quot;: {
+    &quot;item&quot;: {
+      &quot;movieid&quot;: 42
+    }
+  }
+}</code></pre><h2>Response</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 3,
+  &quot;result&quot;: &quot;OK&quot;
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>item</code></td><td><ul class="branches"><li>object <span class="props">{playlistid, position}</span></li><li><a href="../../v13/types/Playlist.Item.html">Playlist.Item</a></li><li>object <span class="props">{path, random, recursive}</span></li><li>object <span class="props">{partymode}</span></li><li>object <span class="props">{broadcastid}</span></li><li>object <span class="props">{channelid}</span></li><li>object <span class="props">{recordingid}</span></li></ul></td><td>No</td><td></td><td></td></tr><tr><td><code>options</code></td><td>object <span class="props">{playername, shuffled, repeat, resume}</span></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Start playback of either the playlist with the given ID, a slideshow with the pictures from the given directory or a single file or an item from the database.&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ControlPlayback&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;item&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;additionalProperties&quot;: false,
+            &quot;properties&quot;: {
+              &quot;playlistid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Playlist.Id&quot;
+              },
+              &quot;position&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Playlist.Position&quot;,
+                &quot;default&quot;: 0
+              }
+            },
+            &quot;required&quot;: [
+              &quot;playlistid&quot;
+            ]
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Playlist.Item&quot;
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;additionalProperties&quot;: false,
+            &quot;properties&quot;: {
+              &quot;path&quot;: {
+                &quot;type&quot;: &quot;string&quot;
+              },
+              &quot;random&quot;: {
+                &quot;type&quot;: &quot;boolean&quot;,
+                &quot;default&quot;: true,
+                &quot;description&quot;: &quot;Deprecated, use the shuffled property of the options parameter instead&quot;
+              },
+              &quot;recursive&quot;: {
+                &quot;type&quot;: &quot;boolean&quot;,
+                &quot;default&quot;: true
+              }
+            },
+            &quot;required&quot;: [
+              &quot;path&quot;
+            ]
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;additionalProperties&quot;: false,
+            &quot;properties&quot;: {
+              &quot;partymode&quot;: {
+                &quot;anyOf&quot;: [
+                  {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;enum&quot;: [
+                      &quot;music&quot;,
+                      &quot;video&quot;
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;minLength&quot;: 5,
+                    &quot;description&quot;: &quot;Path to a smartplaylist (*.xsp) file&quot;
+                  }
+                ]
+              }
+            }
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;additionalProperties&quot;: false,
+            &quot;properties&quot;: {
+              &quot;broadcastid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;broadcastid&quot;
+            ]
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;additionalProperties&quot;: false,
+            &quot;properties&quot;: {
+              &quot;channelid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;channelid&quot;
+            ]
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;additionalProperties&quot;: false,
+            &quot;properties&quot;: {
+              &quot;recordingid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;recordingid&quot;
+            ]
+          }
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;options&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;additionalProperties&quot;: false,
+        &quot;properties&quot;: {
+          &quot;playername&quot;: {
+            &quot;anyOf&quot;: [
+              {
+                &quot;type&quot;: &quot;null&quot;
+              },
+              {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;enum&quot;: [
+                  &quot;default&quot;
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1,
+                &quot;description&quot;: &quot;name of player&quot;
+              }
+            ],
+            &quot;default&quot;: null
+          },
+          &quot;shuffled&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/Optional.Boolean&quot;
+          },
+          &quot;repeat&quot;: {
+            &quot;anyOf&quot;: [
+              {
+                &quot;type&quot;: &quot;null&quot;
+              },
+              {
+                &quot;$ref&quot;: &quot;#/$defs/Player.Repeat&quot;
+              }
+            ],
+            &quot;default&quot;: null
+          },
+          &quot;resume&quot;: {
+            &quot;anyOf&quot;: [
+              {
+                &quot;type&quot;: &quot;boolean&quot;,
+                &quot;description&quot;: &quot;Whether to resume from the resume point or not&quot;
+              },
+              {
+                &quot;$ref&quot;: &quot;#/$defs/Player.Position.Percentage&quot;,
+                &quot;description&quot;: &quot;Percentage value to start from&quot;
+              },
+              {
+                &quot;$ref&quot;: &quot;#/$defs/Player.Position.Time&quot;,
+                &quot;description&quot;: &quot;Time to start from&quot;
+              }
+            ],
+            &quot;default&quot;: false
+          }
+        }
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

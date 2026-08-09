@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVR.Details.Timer - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#PVR">PVR</a></p><h1>PVR.Details.Timer</h1><p>Extends <a href="../../v13/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>timerid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>summary</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>channelid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>isradio</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>istimerrule</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>ismanual</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>starttime</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>endtime</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>runtime</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>lifetime</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>firstday</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>weekdays</code></td><td>array of <a href="../../v13/types/Global.Weekday.html">Global.Weekday</a> <span class="constraints">(unique items)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>priority</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>startmargin</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>endmargin</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>state</code></td><td><a href="../../v13/types/PVR.TimerState.html">PVR.TimerState</a></td><td>No</td><td></td><td></td></tr><tr><td><code>file</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>directory</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>preventduplicateepisodes</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>startanytime</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>endanytime</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>epgsearchstring</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>fulltextepgsearch</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>recordinggroup</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>maxrecordings</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>epguid</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>isreadonly</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>isreminder</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>clientid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>broadcastid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/PVR.GetTimers.html">PVR.GetTimers</a> <span class="muted">(method)</span></li><li><a href="../methods/PVR.GetTimerDetails.html">PVR.GetTimerDetails</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;timerid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;summary&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;channelid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;isradio&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;istimerrule&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;ismanual&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;starttime&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;endtime&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;runtime&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;lifetime&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;firstday&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;weekdays&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Global.Weekday&quot;
+      },
+      &quot;uniqueItems&quot;: true
+    },
+    &quot;priority&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;startmargin&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;endmargin&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;state&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/PVR.TimerState&quot;
+    },
+    &quot;file&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;directory&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;preventduplicateepisodes&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;startanytime&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;endanytime&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;epgsearchstring&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;fulltextepgsearch&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;recordinggroup&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;maxrecordings&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;epguid&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;isreadonly&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;isreminder&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;clientid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;broadcastid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;timerid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

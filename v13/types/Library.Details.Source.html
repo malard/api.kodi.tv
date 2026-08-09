@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library.Details.Source - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Library">Library</a></p><h1>Library.Details.Source</h1><p>Extends <a href="../../v13/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>sourceid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>file</code></td><td>string</td><td>Yes</td><td></td><td>The url encoded multipath string combining all paths of the source </td></tr><tr><td><code>paths</code></td><td><a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td>The individual paths of the media source</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/AudioLibrary.GetSources.html">AudioLibrary.GetSources</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;sourceid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;file&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;The url encoded multipath string combining all paths of the source &quot;
+    },
+    &quot;paths&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;,
+      &quot;description&quot;: &quot;The individual paths of the media source&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;sourceid&quot;,
+    &quot;file&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

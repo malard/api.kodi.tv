@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notifications.Item - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Notifications">Notifications</a></p><h1>Notifications.Item</h1><ol class="branches"><li><p class="muted">An unknown item does not have any additional information.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">An item known to the database has an identification.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>id</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">A movie item has a title and may have a release year.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>year</code></td><td>integer</td><td>No</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">A tv episode has a title and may have an episode number, season number and the title of the show it belongs to.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>episode</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>season</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>showtitle</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">A music video has a title and may have an album and an artist.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>album</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">A song has a title and may have an album, an artist and a track number.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>album</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>track</code></td><td>integer</td><td>No</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">A picture has a file path.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>file</code></td><td>string</td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><p class="muted">A PVR channel is either a radio or tv channel and has a title.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Notifications.Item.Type.html">Notifications.Item.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>id</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>channeltype</code></td><td><a href="../../v13/types/PVR.Channel.Type.html">PVR.Channel.Type</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li></ol><h2>Referenced by</h2><ul class="refs"><li><a href="../notifications/Player.OnStop.html">Player.OnStop</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Player.OnSeek.html">Player.OnSeek</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Playlist.OnAdd.html">Playlist.OnAdd</a> <span class="muted">(notification)</span></li><li><a href="../types/Player.Notifications.Data.html">Player.Notifications.Data</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;anyOf&quot;: [
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;An unknown item does not have any additional information.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;An item known to the database has an identification.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;id&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;id&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;A movie item has a title and may have a release year.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;title&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;year&quot;: {
+          &quot;type&quot;: &quot;integer&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;title&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;A tv episode has a title and may have an episode number, season number and the title of the show it belongs to.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;title&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;episode&quot;: {
+          &quot;type&quot;: &quot;integer&quot;
+        },
+        &quot;season&quot;: {
+          &quot;type&quot;: &quot;integer&quot;
+        },
+        &quot;showtitle&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;title&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;A music video has a title and may have an album and an artist.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;title&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;album&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;artist&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;title&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;A song has a title and may have an album, an artist and a track number.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;title&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;album&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;artist&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;track&quot;: {
+          &quot;type&quot;: &quot;integer&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;title&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;A picture has a file path.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;file&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;file&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;A PVR channel is either a radio or tv channel and has a title.&quot;,
+      &quot;properties&quot;: {
+        &quot;type&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Notifications.Item.Type&quot;
+        },
+        &quot;id&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        },
+        &quot;title&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;channeltype&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/PVR.Channel.Type&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;type&quot;,
+        &quot;id&quot;,
+        &quot;title&quot;,
+        &quot;channeltype&quot;
+      ]
+    }
+  ]
+}</code></pre></details></main>
+</body>
+</html>

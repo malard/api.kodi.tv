@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.OnUpdate - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.OnUpdate</h1><p>A video item has been updated.</p><p class="meta"><span class="badge">Transport: WebSocket / TCP only</span></p><p>Server-initiated push message; it is never delivered over HTTP and carries no <code>id</code> member.</p><h2>Message</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;VideoLibrary.OnUpdate&quot;,
+  &quot;params&quot;: {
+    &quot;sender&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;data&quot;: &quot;&lt;{id, type, playcount, transaction, added}&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>sender</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>data</code></td><td>object <span class="props">{id, type, playcount, transaction, added}</span></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;notification&quot;,
+  &quot;description&quot;: &quot;A video item has been updated.&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;sender&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;data&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;id&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+          },
+          &quot;type&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/Notifications.Library.Video.Type&quot;
+          },
+          &quot;playcount&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+            &quot;minimum&quot;: 0,
+            &quot;default&quot;: -1
+          },
+          &quot;transaction&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/Optional.Boolean&quot;,
+            &quot;description&quot;: &quot;True if the update is being performed within a transaction.&quot;
+          },
+          &quot;added&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/Optional.Boolean&quot;,
+            &quot;description&quot;: &quot;True if the update is for a newly added item.&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;id&quot;,
+          &quot;type&quot;
+        ]
+      }
+    }
+  ],
+  &quot;returns&quot;: null
+}</code></pre></details></main>
+</body>
+</html>

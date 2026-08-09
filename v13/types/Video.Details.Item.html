@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video.Details.Item - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Video">Video</a></p><h1>Video.Details.Item</h1><p>Extends <a href="../../v13/types/Video.Details.Media.html">Video.Details.Media</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>plot</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>lastplayed</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>dateadded</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Video.Details.File.html">Video.Details.File</a> <span class="muted">(type)</span></li><li><a href="../types/Video.Details.TVShow.html">Video.Details.TVShow</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Video.Details.Media&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;file&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;plot&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;lastplayed&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;dateadded&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

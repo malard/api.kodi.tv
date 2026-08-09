@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings.GetSettings - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Settings">Settings</a></p><h1>Settings.GetSettings</h1><p>Retrieves all settings</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;Settings.GetSettings&quot;,
+  &quot;params&quot;: {
+    &quot;level&quot;: &quot;&lt;Setting.Level&gt;&quot;,
+    &quot;filter&quot;: &quot;&lt;{section, category}&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>level</code></td><td><a href="../../v13/types/Setting.Level.html">Setting.Level</a></td><td>No</td><td><code>&quot;standard&quot;</code></td><td></td></tr><tr><td><code>filter</code></td><td><ul class="branches"><li>object <span class="props">{section, category}</span></li></ul></td><td>No</td><td><code>null</code></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>settings</code></td><td>array of <a href="../../v13/types/Setting.Details.Setting.html">Setting.Details.Setting</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Retrieves all settings&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;level&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Setting.Level&quot;,
+        &quot;default&quot;: &quot;standard&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;filter&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;section&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              },
+              &quot;category&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;minLength&quot;: 1
+              }
+            },
+            &quot;required&quot;: [
+              &quot;section&quot;,
+              &quot;category&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;settings&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;items&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Setting.Details.Setting&quot;
+        }
+      }
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

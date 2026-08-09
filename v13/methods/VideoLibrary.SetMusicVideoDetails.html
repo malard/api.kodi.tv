@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.SetMusicVideoDetails - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.SetMusicVideoDetails</h1><p>Update the given music video with the given details</p><p class="meta"><span class="badge">Permission: UpdateData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;VideoLibrary.SetMusicVideoDetails&quot;,
+  &quot;params&quot;: {
+    &quot;musicvideoid&quot;: &quot;&lt;Library.Id&gt;&quot;,
+    &quot;title&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;playcount&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;runtime&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;director&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;studio&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;year&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;plot&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;album&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;artist&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;genre&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;track&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;lastplayed&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;thumbnail&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;fanart&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;tag&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;art&quot;: &quot;&lt;null | Media.Artwork.Set&gt;&quot;,
+    &quot;resume&quot;: &quot;&lt;null | Video.Resume&gt;&quot;,
+    &quot;rating&quot;: &quot;&lt;Optional.Number&gt;&quot;,
+    &quot;userrating&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;dateadded&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;premiered&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;uniqueid&quot;: &quot;&lt;null | Media.UniqueID.Set&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>musicvideoid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>playcount</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>runtime</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td>Runtime in seconds</td></tr><tr><td><code>director</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>studio</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>year</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td>linked with premiered. Overridden by premiered parameter</td></tr><tr><td><code>plot</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>album</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>genre</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>track</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>lastplayed</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>thumbnail</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>fanart</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>tag</code></td><td>null | <a href="../../v13/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>art</code></td><td>null | <a href="../../v13/types/Media.Artwork.Set.html">Media.Artwork.Set</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>resume</code></td><td>null | <a href="../../v13/types/Video.Resume.html">Video.Resume</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>rating</code></td><td><a href="../../v13/types/Optional.Number.html">Optional.Number</a></td><td>No</td><td></td><td></td></tr><tr><td><code>userrating</code></td><td><a href="../../v13/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>dateadded</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>premiered</code></td><td><a href="../../v13/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td>linked with year. Overrides year</td></tr><tr><td><code>uniqueid</code></td><td>null | <a href="../../v13/types/Media.UniqueID.Set.html">Media.UniqueID.Set</a></td><td>No</td><td><code>null</code></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Update the given music video with the given details&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;UpdateData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;musicvideoid&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;title&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;playcount&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;runtime&quot;,
+      &quot;description&quot;: &quot;Runtime in seconds&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;director&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;studio&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;year&quot;,
+      &quot;description&quot;: &quot;linked with premiered. Overridden by premiered parameter&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;plot&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;album&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;artist&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;genre&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;track&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;lastplayed&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;thumbnail&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;fanart&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;tag&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;art&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Media.Artwork.Set&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;resume&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Video.Resume&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;rating&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Number&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;userrating&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;dateadded&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;premiered&quot;,
+      &quot;description&quot;: &quot;linked with year. Overrides year&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;uniqueid&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Media.UniqueID.Set&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

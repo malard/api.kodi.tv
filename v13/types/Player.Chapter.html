@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.Chapter - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.Chapter</h1><p>Single chapter of the currently playing video</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>index</code></td><td>integer</td><td>Yes</td><td></td><td>One-based chapter index</td></tr><tr><td><code>name</code></td><td>string</td><td>No</td><td></td><td>Chapter name if available</td></tr><tr><td><code>time</code></td><td>integer</td><td>Yes</td><td></td><td>Chapter position in seconds from start</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Player.GetChapters.html">Player.GetChapters</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;Single chapter of the currently playing video&quot;,
+  &quot;properties&quot;: {
+    &quot;index&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;description&quot;: &quot;One-based chapter index&quot;
+    },
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Chapter name if available&quot;
+    },
+    &quot;time&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;description&quot;: &quot;Chapter position in seconds from start&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;index&quot;,
+    &quot;time&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

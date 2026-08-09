@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVR.Details.Client - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#PVR">PVR</a></p><h1>PVR.Details.Client</h1><p>Extends <a href="../../v13/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>clientid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>addonid</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>supportstv</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>supportsradio</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>supportsepg</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>supportsrecordings</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>supportstimers</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>supportschannelgroups</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>supportschannelscan</code></td><td>boolean</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/PVR.GetClients.html">PVR.GetClients</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;clientid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;addonid&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;supportstv&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;supportsradio&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;supportsepg&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;supportsrecordings&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;supportstimers&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;supportschannelgroups&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;supportschannelscan&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;clientid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

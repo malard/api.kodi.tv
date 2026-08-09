@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playlist.Item - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Playlist">Playlist</a></p><h1>Playlist.Item</h1><ol class="branches"><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td>string</td><td>Yes</td><td></td><td>Path to a file (not a directory) to be added to the playlist</td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>directory</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>recursive</code></td><td>boolean</td><td>No</td><td><code>false</code></td><td></td></tr><tr><td><code>media</code></td><td><a href="../../v13/types/Files.Media.html">Files.Media</a></td><td>No</td><td><code>&quot;files&quot;</code></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>movieid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>episodeid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>musicvideoid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>artistid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>albumid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>songid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>genreid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td>Identification of a genre from the AudioLibrary</td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>recordingid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td>Identification of a PVR recording</td></tr></tbody></table></div></li></ol><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Player.Open.html">Player.Open</a> <span class="muted">(method)</span></li><li><a href="../methods/Playlist.Add.html">Playlist.Add</a> <span class="muted">(method)</span></li><li><a href="../methods/Playlist.Insert.html">Playlist.Insert</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;anyOf&quot;: [
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;file&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;description&quot;: &quot;Path to a file (not a directory) to be added to the playlist&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;file&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;directory&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;recursive&quot;: {
+          &quot;type&quot;: &quot;boolean&quot;,
+          &quot;default&quot;: false
+        },
+        &quot;media&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Files.Media&quot;,
+          &quot;default&quot;: &quot;files&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;directory&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;movieid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;movieid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;episodeid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;episodeid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;musicvideoid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;musicvideoid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;artistid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;artistid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;albumid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;albumid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;songid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;songid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;genreid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;,
+          &quot;description&quot;: &quot;Identification of a genre from the AudioLibrary&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;genreid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;recordingid&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;,
+          &quot;description&quot;: &quot;Identification of a PVR recording&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;recordingid&quot;
+      ],
+      &quot;additionalProperties&quot;: false
+    }
+  ]
+}</code></pre></details></main>
+</body>
+</html>

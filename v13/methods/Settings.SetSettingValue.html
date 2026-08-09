@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings.SetSettingValue - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Settings">Settings</a></p><h1>Settings.SetSettingValue</h1><p>Changes the value of a setting</p><p class="meta"><span class="badge">Permission: WriteSetting</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;Settings.SetSettingValue&quot;,
+  &quot;params&quot;: {
+    &quot;setting&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;value&quot;: &quot;&lt;Setting.Value.Extended&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>setting</code></td><td>string <span class="constraints">(minLength: 1)</span></td><td>Yes</td><td></td><td></td></tr><tr><td><code>value</code></td><td><a href="../../v13/types/Setting.Value.Extended.html">Setting.Value.Extended</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>boolean</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Changes the value of a setting&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;WriteSetting&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;setting&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      }
+    },
+    {
+      &quot;name&quot;: &quot;value&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Setting.Value.Extended&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;boolean&quot;
+}</code></pre></details></main>
+</body>
+</html>

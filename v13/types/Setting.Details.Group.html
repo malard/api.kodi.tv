@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setting.Details.Group - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Setting">Setting</a></p><h1>Setting.Details.Group</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td>string <span class="constraints">(minLength: 1)</span></td><td>Yes</td><td></td><td></td></tr><tr><td><code>settings</code></td><td>array of <a href="../../v13/types/Setting.Details.Setting.html">Setting.Details.Setting</a> <span class="constraints">(minItems: 1; unique items)</span></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Setting.Details.Category.html">Setting.Details.Category</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;settings&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Setting.Details.Setting&quot;
+      },
+      &quot;minItems&quot;: 1,
+      &quot;uniqueItems&quot;: true
+    }
+  },
+  &quot;required&quot;: [
+    &quot;id&quot;
+  ],
+  &quot;additionalProperties&quot;: false
+}</code></pre></details></main>
+</body>
+</html>

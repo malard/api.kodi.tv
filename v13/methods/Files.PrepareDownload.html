@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Files.PrepareDownload - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Files">Files</a></p><h1>Files.PrepareDownload</h1><p>Provides a way to download a given file (e.g. providing an URL to the real file location)</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span> <span class="badge">Transport: FileDownloadRedirect</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;Files.PrepareDownload&quot;,
+  &quot;params&quot;: {
+    &quot;path&quot;: &quot;&lt;string&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>protocol</code></td><td><code>&quot;http&quot;</code></td><td>Yes</td><td></td><td></td></tr><tr><td><code>details</code></td><td>any</td><td>Yes</td><td></td><td>Transport specific details on how/from where to download the given file</td></tr><tr><td><code>mode</code></td><td><code>&quot;redirect&quot;</code> | <code>&quot;direct&quot;</code></td><td>Yes</td><td></td><td>Direct mode allows using Files.Download whereas redirect mode requires the usage of a different protocol</td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Provides a way to download a given file (e.g. providing an URL to the real file location)&quot;,
+  &quot;transport&quot;: [
+    &quot;Response&quot;,
+    &quot;FileDownloadRedirect&quot;
+  ],
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;path&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;protocol&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;enum&quot;: [
+          &quot;http&quot;
+        ]
+      },
+      &quot;details&quot;: {
+        &quot;type&quot;: &quot;any&quot;,
+        &quot;description&quot;: &quot;Transport specific details on how/from where to download the given file&quot;
+      },
+      &quot;mode&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;enum&quot;: [
+          &quot;redirect&quot;,
+          &quot;direct&quot;
+        ],
+        &quot;description&quot;: &quot;Direct mode allows using Files.Download whereas redirect mode requires the usage of a different protocol&quot;
+      }
+    },
+    &quot;required&quot;: [
+      &quot;protocol&quot;,
+      &quot;details&quot;,
+      &quot;mode&quot;
+    ]
+  }
+}</code></pre></details></main>
+</body>
+</html>

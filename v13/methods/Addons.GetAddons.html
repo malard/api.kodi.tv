@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Addons.GetAddons - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Addons">Addons</a></p><h1>Addons.GetAddons</h1><p>Gets all available addons</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;Addons.GetAddons&quot;,
+  &quot;params&quot;: {
+    &quot;type&quot;: &quot;&lt;Addon.Types&gt;&quot;,
+    &quot;content&quot;: &quot;&lt;Addon.Content&gt;&quot;,
+    &quot;enabled&quot;: &quot;&lt;boolean | \&quot;all\&quot;&gt;&quot;,
+    &quot;properties&quot;: &quot;&lt;Addon.Fields&gt;&quot;,
+    &quot;limits&quot;: &quot;&lt;List.Limits&gt;&quot;,
+    &quot;installed&quot;: &quot;&lt;boolean | \&quot;all\&quot;&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Addon.Types.html">Addon.Types</a></td><td>No</td><td></td><td></td></tr><tr><td><code>content</code></td><td><a href="../../v13/types/Addon.Content.html">Addon.Content</a></td><td>No</td><td></td><td>Content provided by the addon. Only considered for plugins and scripts.</td></tr><tr><td><code>enabled</code></td><td>boolean | <code>&quot;all&quot;</code></td><td>No</td><td><code>&quot;all&quot;</code></td><td></td></tr><tr><td><code>properties</code></td><td><a href="../../v13/types/Addon.Fields.html">Addon.Fields</a></td><td>No</td><td></td><td></td></tr><tr><td><code>limits</code></td><td><a href="../../v13/types/List.Limits.html">List.Limits</a></td><td>No</td><td></td><td></td></tr><tr><td><code>installed</code></td><td>boolean | <code>&quot;all&quot;</code></td><td>No</td><td><code>true</code></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>limits</code></td><td><a href="../../v13/types/List.LimitsReturned.html">List.LimitsReturned</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>addons</code></td><td>array of <a href="../../v13/types/Addon.Details.html">Addon.Details</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Gets all available addons&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;type&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Addon.Types&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;content&quot;,
+      &quot;description&quot;: &quot;Content provided by the addon. Only considered for plugins and scripts.&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Addon.Content&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;enabled&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+              &quot;all&quot;
+            ]
+          }
+        ],
+        &quot;default&quot;: &quot;all&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;properties&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Addon.Fields&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;limits&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.Limits&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;installed&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+              &quot;all&quot;
+            ]
+          }
+        ],
+        &quot;default&quot;: true
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;limits&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.LimitsReturned&quot;
+      },
+      &quot;addons&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;items&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Addon.Details&quot;
+        }
+      }
+    },
+    &quot;required&quot;: [
+      &quot;limits&quot;
+    ]
+  }
+}</code></pre></details></main>
+</body>
+</html>

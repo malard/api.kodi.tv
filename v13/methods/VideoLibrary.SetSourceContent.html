@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.SetSourceContent - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.SetSourceContent</h1><p>Assigns a content type and scraper to a video source path, as the &#x27;Set content&#x27; dialog does</p><p class="meta"><span class="badge">Permission: UpdateData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;VideoLibrary.SetSourceContent&quot;,
+  &quot;params&quot;: {
+    &quot;path&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;content&quot;: &quot;&lt;\&quot;movies\&quot; | \&quot;tvshows\&quot; | \&quot;musicvideos\&quot; | \&quot;none\&quot;&gt;&quot;,
+    &quot;scraperid&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;scrapersettings&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;scanrecursive&quot;: &quot;&lt;boolean&gt;&quot;,
+    &quot;usedirectorynames&quot;: &quot;&lt;boolean&gt;&quot;,
+    &quot;containssingleitem&quot;: &quot;&lt;boolean&gt;&quot;,
+    &quot;noupdate&quot;: &quot;&lt;boolean&gt;&quot;,
+    &quot;clearmode&quot;: &quot;&lt;\&quot;clear\&quot; | \&quot;exclude\&quot; | \&quot;remove\&quot;&gt;&quot;,
+    &quot;refresh&quot;: &quot;&lt;boolean&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>path</code></td><td>string <span class="constraints">(minLength: 1)</span></td><td>Yes</td><td></td><td>Path the content binding applies to. A trailing separator is added if missing</td></tr><tr><td><code>content</code></td><td><code>&quot;movies&quot;</code> | <code>&quot;tvshows&quot;</code> | <code>&quot;musicvideos&quot;</code> | <code>&quot;none&quot;</code></td><td>Yes</td><td></td><td>Content type to bind, or &quot;none&quot; to clear the binding</td></tr><tr><td><code>scraperid</code></td><td>string</td><td>No</td><td><code>&quot;&quot;</code></td><td>Addon id of the scraper. Required unless content is &quot;none&quot;</td></tr><tr><td><code>scrapersettings</code></td><td>string</td><td>No</td><td><code>&quot;&quot;</code></td><td>Scraper settings as XML. Scraper defaults are used when empty</td></tr><tr><td><code>scanrecursive</code></td><td>boolean</td><td>No</td><td><code>true</code></td><td>Scan sub folders. Ignored for tvshows and when containssingleitem is set</td></tr><tr><td><code>usedirectorynames</code></td><td>boolean</td><td>No</td><td><code>false</code></td><td>Take the item name from the containing folder. Ignored for tvshows</td></tr><tr><td><code>containssingleitem</code></td><td>boolean</td><td>No</td><td><code>false</code></td><td>The path holds one item, named after the folder the scan started in</td></tr><tr><td><code>noupdate</code></td><td>boolean</td><td>No</td><td><code>false</code></td><td>Exclude the path from library updates</td></tr><tr><td><code>clearmode</code></td><td><code>&quot;clear&quot;</code> | <code>&quot;exclude&quot;</code> | <code>&quot;remove&quot;</code></td><td>No</td><td><code>&quot;clear&quot;</code></td><td>Only used when content is &quot;none&quot;. &quot;clear&quot; unbinds the scraper, &quot;exclude&quot; also excludes the path from scanning, &quot;remove&quot; additionally deletes the items already scraped from it</td></tr><tr><td><code>refresh</code></td><td>boolean</td><td>No</td><td><code>false</code></td><td>Scan the path once the binding has been applied</td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Assigns a content type and scraper to a video source path, as the &#x27;Set content&#x27; dialog does&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;UpdateData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;path&quot;,
+      &quot;required&quot;: true,
+      &quot;description&quot;: &quot;Path the content binding applies to. A trailing separator is added if missing&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;minLength&quot;: 1
+      }
+    },
+    {
+      &quot;name&quot;: &quot;content&quot;,
+      &quot;required&quot;: true,
+      &quot;description&quot;: &quot;Content type to bind, or \&quot;none\&quot; to clear the binding&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;enum&quot;: [
+          &quot;movies&quot;,
+          &quot;tvshows&quot;,
+          &quot;musicvideos&quot;,
+          &quot;none&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scraperid&quot;,
+      &quot;description&quot;: &quot;Addon id of the scraper. Required unless content is \&quot;none\&quot;&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scrapersettings&quot;,
+      &quot;description&quot;: &quot;Scraper settings as XML. Scraper defaults are used when empty&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scanrecursive&quot;,
+      &quot;description&quot;: &quot;Scan sub folders. Ignored for tvshows and when containssingleitem is set&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: true
+      }
+    },
+    {
+      &quot;name&quot;: &quot;usedirectorynames&quot;,
+      &quot;description&quot;: &quot;Take the item name from the containing folder. Ignored for tvshows&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: false
+      }
+    },
+    {
+      &quot;name&quot;: &quot;containssingleitem&quot;,
+      &quot;description&quot;: &quot;The path holds one item, named after the folder the scan started in&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: false
+      }
+    },
+    {
+      &quot;name&quot;: &quot;noupdate&quot;,
+      &quot;description&quot;: &quot;Exclude the path from library updates&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: false
+      }
+    },
+    {
+      &quot;name&quot;: &quot;clearmode&quot;,
+      &quot;description&quot;: &quot;Only used when content is \&quot;none\&quot;. \&quot;clear\&quot; unbinds the scraper, \&quot;exclude\&quot; also excludes the path from scanning, \&quot;remove\&quot; additionally deletes the items already scraped from it&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;clear&quot;,
+        &quot;enum&quot;: [
+          &quot;clear&quot;,
+          &quot;exclude&quot;,
+          &quot;remove&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;refresh&quot;,
+      &quot;description&quot;: &quot;Scan the path once the binding has been applied&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: false
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

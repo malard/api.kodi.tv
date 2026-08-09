@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.Notifications.Data - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.Notifications.Data</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>item</code></td><td><a href="../../v13/types/Notifications.Item.html">Notifications.Item</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>player</code></td><td><a href="../../v13/types/Player.Notifications.Player.html">Player.Notifications.Player</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../notifications/Player.OnPlay.html">Player.OnPlay</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Player.OnResume.html">Player.OnResume</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Player.OnAVStart.html">Player.OnAVStart</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Player.OnAVChange.html">Player.OnAVChange</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Player.OnPause.html">Player.OnPause</a> <span class="muted">(notification)</span></li><li><a href="../notifications/Player.OnSpeedChanged.html">Player.OnSpeedChanged</a> <span class="muted">(notification)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;item&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Notifications.Item&quot;
+    },
+    &quot;player&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Notifications.Player&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;item&quot;,
+    &quot;player&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

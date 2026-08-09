@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setting.Details.ControlSpinner - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Setting">Setting</a></p><h1>Setting.Details.ControlSpinner</h1><p>Extends <a href="../../v13/types/Setting.Details.ControlBase.html">Setting.Details.ControlBase</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>&quot;spinner&quot;</code></td><td>Yes</td><td></td><td></td></tr><tr><td><code>formatlabel</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>minimumlabel</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Setting.Details.Control.html">Setting.Details.Control</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Setting.Details.ControlBase&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;type&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;enum&quot;: [
+        &quot;spinner&quot;
+      ]
+    },
+    &quot;formatlabel&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;minimumlabel&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;type&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

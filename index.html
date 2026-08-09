@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="v13/methods/index.html">Methods</a> <a href="v13/notifications/index.html">Notifications</a> <a href="v13/types/index.html">Types</a> <a href="v13/errors.html">Errors</a></nav></div></header>
+<main>
+<h1>Kodi JSON-RPC API</h1><p class="meta"><span class="badge">schema version 13.15.0</span></p><p>Reference documentation for the JSON-RPC API exposed by <a href="https://kodi.tv">Kodi</a>, the open source media center. It covers every request/response method, every server-initiated notification, every schema type and the error taxonomy, and is generated directly from the machine-readable schema shipped inside Kodi itself.</p><h2>How the API actually works</h2><p>The API is <a href="https://www.jsonrpc.org/specification">JSON-RPC 2.0</a> served over three transports:</p><ul><li><strong>HTTP</strong> - POST the request envelope to <code>/jsonrpc</code> (default port 8080). Request/response only; notifications are never delivered over HTTP. Requires the 'Allow remote control via HTTP' setting to be enabled.</li><li><strong>WebSocket</strong> - default port 9090; supports request/response and server-initiated notifications.</li><li><strong>Raw TCP</strong> - port 9090; a newline-free stream of JSON objects over a plain socket; supports request/response and notifications.</li></ul><p>There is a single endpoint: the method is selected by the <code>method</code> member of the request envelope, not by the URL. Authentication is HTTP basic auth when a username and password are configured. A permissions model gates the methods; each method page states the permission it requires.</p><h2>Worked examples</h2><p>Each example shows the exact envelopes on the wire. The curl command targets the HTTP transport; the same request envelope works over WebSocket and raw TCP verbatim.</p><h3>Set the application volume to an absolute level</h3><p class="muted"><a href="v13/methods/Application.SetVolume.html">Application.SetVolume</a></p><pre><code>curl -X POST http://localhost:8080/jsonrpc -H &#x27;content-type: application/json&#x27; -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:4,&quot;method&quot;:&quot;Application.SetVolume&quot;,&quot;params&quot;:{&quot;volume&quot;:75}}&#x27;</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 4,
+  &quot;method&quot;: &quot;Application.SetVolume&quot;,
+  &quot;params&quot;: {
+    &quot;volume&quot;: 75
+  }
+}</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 4,
+  &quot;result&quot;: 75
+}</code></pre><h3>Show a notification in the Kodi GUI</h3><p class="muted"><a href="v13/methods/GUI.ShowNotification.html">GUI.ShowNotification</a></p><pre><code>curl -X POST http://localhost:8080/jsonrpc -H &#x27;content-type: application/json&#x27; -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:6,&quot;method&quot;:&quot;GUI.ShowNotification&quot;,&quot;params&quot;:{&quot;title&quot;:&quot;Library update&quot;,&quot;message&quot;:&quot;The video library scan has finished&quot;,&quot;image&quot;:&quot;info&quot;,&quot;displaytime&quot;:5000}}&#x27;</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 6,
+  &quot;method&quot;: &quot;GUI.ShowNotification&quot;,
+  &quot;params&quot;: {
+    &quot;title&quot;: &quot;Library update&quot;,
+    &quot;message&quot;: &quot;The video library scan has finished&quot;,
+    &quot;image&quot;: &quot;info&quot;,
+    &quot;displaytime&quot;: 5000
+  }
+}</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 6,
+  &quot;result&quot;: &quot;OK&quot;
+}</code></pre><h3>Retrieve the JSON-RPC protocol version</h3><p class="muted"><a href="v13/methods/JSONRPC.Version.html">JSONRPC.Version</a></p><pre><code>curl -X POST http://localhost:8080/jsonrpc -H &#x27;content-type: application/json&#x27; -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;JSONRPC.Version&quot;}&#x27;</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;JSONRPC.Version&quot;
+}</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;result&quot;: {
+    &quot;version&quot;: {
+      &quot;major&quot;: 13,
+      &quot;minor&quot;: 15,
+      &quot;patch&quot;: 0
+    }
+  }
+}</code></pre><h3>Notification pushed when playback of a movie starts</h3><p class="muted"><a href="v13/notifications/Player.OnPlay.html">Player.OnPlay</a> - pushed over WebSocket/TCP only</p><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;Player.OnPlay&quot;,
+  &quot;params&quot;: {
+    &quot;sender&quot;: &quot;xbmc&quot;,
+    &quot;data&quot;: {
+      &quot;item&quot;: {
+        &quot;type&quot;: &quot;movie&quot;,
+        &quot;title&quot;: &quot;The Matrix&quot;,
+        &quot;year&quot;: 1999
+      },
+      &quot;player&quot;: {
+        &quot;playerid&quot;: 1,
+        &quot;speed&quot;: 1
+      }
+    }
+  }
+}</code></pre><h3>List the players that are currently active</h3><p class="muted"><a href="v13/methods/Player.GetActivePlayers.html">Player.GetActivePlayers</a></p><pre><code>curl -X POST http://localhost:8080/jsonrpc -H &#x27;content-type: application/json&#x27; -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:2,&quot;method&quot;:&quot;Player.GetActivePlayers&quot;}&#x27;</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 2,
+  &quot;method&quot;: &quot;Player.GetActivePlayers&quot;
+}</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 2,
+  &quot;result&quot;: [
+    {
+      &quot;playerid&quot;: 1,
+      &quot;playertype&quot;: &quot;internal&quot;,
+      &quot;type&quot;: &quot;video&quot;
+    }
+  ]
+}</code></pre><h3>Start playback of a movie from the video library</h3><p class="muted"><a href="v13/methods/Player.Open.html">Player.Open</a></p><pre><code>curl -X POST http://localhost:8080/jsonrpc -H &#x27;content-type: application/json&#x27; -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:3,&quot;method&quot;:&quot;Player.Open&quot;,&quot;params&quot;:{&quot;item&quot;:{&quot;movieid&quot;:42}}}&#x27;</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 3,
+  &quot;method&quot;: &quot;Player.Open&quot;,
+  &quot;params&quot;: {
+    &quot;item&quot;: {
+      &quot;movieid&quot;: 42
+    }
+  }
+}</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 3,
+  &quot;result&quot;: &quot;OK&quot;
+}</code></pre><h3>Page through the movie library with selected properties</h3><p class="muted"><a href="v13/methods/VideoLibrary.GetMovies.html">VideoLibrary.GetMovies</a></p><pre><code>curl -X POST http://localhost:8080/jsonrpc -H &#x27;content-type: application/json&#x27; -d &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:5,&quot;method&quot;:&quot;VideoLibrary.GetMovies&quot;,&quot;params&quot;:{&quot;properties&quot;:[&quot;title&quot;,&quot;year&quot;,&quot;rating&quot;],&quot;limits&quot;:{&quot;start&quot;:0,&quot;end&quot;:2}}}&#x27;</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 5,
+  &quot;method&quot;: &quot;VideoLibrary.GetMovies&quot;,
+  &quot;params&quot;: {
+    &quot;properties&quot;: [
+      &quot;title&quot;,
+      &quot;year&quot;,
+      &quot;rating&quot;
+    ],
+    &quot;limits&quot;: {
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 2
+    }
+  }
+}</code></pre><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 5,
+  &quot;result&quot;: {
+    &quot;limits&quot;: {
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 2,
+      &quot;total&quot;: 245
+    },
+    &quot;movies&quot;: [
+      {
+        &quot;movieid&quot;: 1,
+        &quot;label&quot;: &quot;The Matrix&quot;,
+        &quot;title&quot;: &quot;The Matrix&quot;,
+        &quot;year&quot;: 1999,
+        &quot;rating&quot;: 8.7
+      },
+      {
+        &quot;movieid&quot;: 2,
+        &quot;label&quot;: &quot;Spirited Away&quot;,
+        &quot;title&quot;: &quot;Spirited Away&quot;,
+        &quot;year&quot;: 2001,
+        &quot;rating&quot;: 8.6
+      }
+    ]
+  }
+}</code></pre><h2>About this documentation</h2><p>This site is generated from the machine-readable schema shipped inside Kodi (<code>xbmc/interfaces/json-rpc/schema</code>) on every change, so it cannot drift from the implementation. The same schema is served live by a running Kodi instance via the <a href="v13/methods/JSONRPC.Introspect.html">JSONRPC.Introspect</a> method.</p><p>Machine-readable artifacts:</p><ul><li><a href="v13/openrpc.json">openrpc.json</a> - <a href="https://open-rpc.org/">OpenRPC</a> document covering all request/response methods</li><li><a href="v13/asyncapi.json">asyncapi.json</a> - <a href="https://www.asyncapi.com/">AsyncAPI</a> document covering the notifications</li></ul><h2>Reference</h2><ul><li><a href="v13/methods/index.html">Methods</a> - 184 request/response methods</li><li><a href="v13/notifications/index.html">Notifications</a> - 42 server-initiated notifications</li><li><a href="v13/types/index.html">Types</a> - 204 schema types</li><li><a href="v13/errors.html">Errors</a> - the error taxonomy</li></ul></main>
+</body>
+</html>

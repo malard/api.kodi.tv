@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Textures.Details.Texture - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Textures">Textures</a></p><h1>Textures.Details.Texture</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>textureid</code></td><td><a href="../../v13/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>url</code></td><td>string</td><td>No</td><td></td><td>Original source URL</td></tr><tr><td><code>cachedurl</code></td><td>string</td><td>No</td><td></td><td>Cached URL on disk</td></tr><tr><td><code>lasthashcheck</code></td><td>string</td><td>No</td><td></td><td>Last time source was checked for changes</td></tr><tr><td><code>imagehash</code></td><td>string</td><td>No</td><td></td><td>Hash of image</td></tr><tr><td><code>sizes</code></td><td>array of <a href="../../v13/types/Textures.Details.Size.html">Textures.Details.Size</a></td><td>No</td><td></td><td></td></tr><tr><td><code>lastlibrarycheck</code></td><td>string</td><td>No</td><td></td><td>Last time texture existence was verified in library</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Textures.GetTextures.html">Textures.GetTextures</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;textureid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;,
+      &quot;required&quot;: &quot;true&quot;
+    },
+    &quot;url&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Original source URL&quot;
+    },
+    &quot;cachedurl&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Cached URL on disk&quot;
+    },
+    &quot;lasthashcheck&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Last time source was checked for changes&quot;
+    },
+    &quot;imagehash&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Hash of image&quot;
+    },
+    &quot;sizes&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Textures.Details.Size&quot;
+      }
+    },
+    &quot;lastlibrarycheck&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Last time texture existence was verified in library&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.CustomViewMode - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.CustomViewMode</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>zoom</code></td><td><code>&quot;increase&quot;</code> | <code>&quot;decrease&quot;</code> | <a href="../../v13/types/Optional.Number.html">Optional.Number</a> <span class="constraints">(minimum: 0.5; maximum: 2.0)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>pixelratio</code></td><td><code>&quot;increase&quot;</code> | <code>&quot;decrease&quot;</code> | <a href="../../v13/types/Optional.Number.html">Optional.Number</a> <span class="constraints">(minimum: 0.5; maximum: 2.0)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>verticalshift</code></td><td><code>&quot;increase&quot;</code> | <code>&quot;decrease&quot;</code> | <a href="../../v13/types/Optional.Number.html">Optional.Number</a> <span class="constraints">(minimum: -2.0; maximum: 2.0)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>nonlinearstretch</code></td><td><code>&quot;increase&quot;</code> | <code>&quot;decrease&quot;</code> | <a href="../../v13/types/Optional.Boolean.html">Optional.Boolean</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Player.SetViewMode.html">Player.SetViewMode</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;zoom&quot;: {
+      &quot;anyOf&quot;: [
+        {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;enum&quot;: [
+            &quot;increase&quot;,
+            &quot;decrease&quot;
+          ]
+        },
+        {
+          &quot;$ref&quot;: &quot;#/$defs/Optional.Number&quot;,
+          &quot;minimum&quot;: 0.5,
+          &quot;maximum&quot;: 2.0,
+          &quot;description&quot;: &quot;Zoom where 1.0 means 100%&quot;
+        }
+      ]
+    },
+    &quot;pixelratio&quot;: {
+      &quot;anyOf&quot;: [
+        {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;enum&quot;: [
+            &quot;increase&quot;,
+            &quot;decrease&quot;
+          ]
+        },
+        {
+          &quot;$ref&quot;: &quot;#/$defs/Optional.Number&quot;,
+          &quot;minimum&quot;: 0.5,
+          &quot;maximum&quot;: 2.0,
+          &quot;description&quot;: &quot;Pixel aspect ratio where 1.0 means square pixel&quot;
+        }
+      ]
+    },
+    &quot;verticalshift&quot;: {
+      &quot;anyOf&quot;: [
+        {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;enum&quot;: [
+            &quot;increase&quot;,
+            &quot;decrease&quot;
+          ]
+        },
+        {
+          &quot;$ref&quot;: &quot;#/$defs/Optional.Number&quot;,
+          &quot;minimum&quot;: -2.0,
+          &quot;maximum&quot;: 2.0,
+          &quot;description&quot;: &quot;Vertical shift 1.0 means shift to bottom&quot;
+        }
+      ]
+    },
+    &quot;nonlinearstretch&quot;: {
+      &quot;anyOf&quot;: [
+        {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;enum&quot;: [
+            &quot;increase&quot;,
+            &quot;decrease&quot;
+          ]
+        },
+        {
+          &quot;$ref&quot;: &quot;#/$defs/Optional.Boolean&quot;,
+          &quot;description&quot;: &quot;Flag to enable nonlinear stretch&quot;
+        }
+      ]
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

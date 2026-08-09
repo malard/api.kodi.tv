@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.Property.Value - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.Property.Value</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v13/types/Player.Type.html">Player.Type</a></td><td>No</td><td></td><td></td></tr><tr><td><code>partymode</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>speed</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>time</code></td><td><a href="../../v13/types/Global.Time.html">Global.Time</a></td><td>No</td><td></td><td></td></tr><tr><td><code>percentage</code></td><td><a href="../../v13/types/Player.Position.Percentage.html">Player.Position.Percentage</a></td><td>No</td><td></td><td></td></tr><tr><td><code>totaltime</code></td><td><a href="../../v13/types/Global.Time.html">Global.Time</a></td><td>No</td><td></td><td></td></tr><tr><td><code>playlistid</code></td><td><a href="../../v13/types/Playlist.Id.html">Playlist.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>position</code></td><td><a href="../../v13/types/Playlist.Position.html">Playlist.Position</a></td><td>No</td><td></td><td></td></tr><tr><td><code>repeat</code></td><td><a href="../../v13/types/Player.Repeat.html">Player.Repeat</a></td><td>No</td><td></td><td></td></tr><tr><td><code>shuffled</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canseek</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canchangespeed</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canmove</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canzoom</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canrotate</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canshuffle</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>canrepeat</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>currentaudiostream</code></td><td><a href="../../v13/types/Player.Audio.Stream.html">Player.Audio.Stream</a></td><td>No</td><td></td><td></td></tr><tr><td><code>audiostreams</code></td><td>array of <a href="../../v13/types/Player.Audio.Stream.html">Player.Audio.Stream</a></td><td>No</td><td></td><td></td></tr><tr><td><code>currentvideostream</code></td><td><a href="../../v13/types/Player.Video.Stream.html">Player.Video.Stream</a></td><td>No</td><td></td><td></td></tr><tr><td><code>videostreams</code></td><td>array of <a href="../../v13/types/Player.Video.Stream.html">Player.Video.Stream</a></td><td>No</td><td></td><td></td></tr><tr><td><code>subtitleenabled</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>currentsubtitle</code></td><td><a href="../../v13/types/Player.Subtitle.html">Player.Subtitle</a></td><td>No</td><td></td><td></td></tr><tr><td><code>subtitles</code></td><td>array of <a href="../../v13/types/Player.Subtitle.html">Player.Subtitle</a></td><td>No</td><td></td><td></td></tr><tr><td><code>live</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>cachepercentage</code></td><td><a href="../../v13/types/Player.Position.Percentage.html">Player.Position.Percentage</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Player.GetProperties.html">Player.GetProperties</a> <span class="muted">(method)</span></li><li><a href="../notifications/Player.OnPropertyChanged.html">Player.OnPropertyChanged</a> <span class="muted">(notification)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;type&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Type&quot;
+    },
+    &quot;partymode&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;speed&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;time&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Global.Time&quot;
+    },
+    &quot;percentage&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Position.Percentage&quot;
+    },
+    &quot;totaltime&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Global.Time&quot;
+    },
+    &quot;playlistid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Playlist.Id&quot;
+    },
+    &quot;position&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Playlist.Position&quot;
+    },
+    &quot;repeat&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Repeat&quot;
+    },
+    &quot;shuffled&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canseek&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canchangespeed&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canmove&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canzoom&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canrotate&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canshuffle&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;canrepeat&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;currentaudiostream&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Audio.Stream&quot;
+    },
+    &quot;audiostreams&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Player.Audio.Stream&quot;
+      }
+    },
+    &quot;currentvideostream&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Video.Stream&quot;
+    },
+    &quot;videostreams&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Player.Video.Stream&quot;
+      }
+    },
+    &quot;subtitleenabled&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;currentsubtitle&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Subtitle&quot;
+    },
+    &quot;subtitles&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Player.Subtitle&quot;
+      }
+    },
+    &quot;live&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;cachepercentage&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Position.Percentage&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

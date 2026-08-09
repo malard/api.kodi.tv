@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GUI.Property.Value - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#GUI">GUI</a></p><h1>GUI.Property.Value</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>currentwindow</code></td><td>object <span class="props">{id, label}</span></td><td>No</td><td></td><td></td></tr><tr><td><code>currentcontrol</code></td><td>object <span class="props">{label}</span></td><td>No</td><td></td><td></td></tr><tr><td><code>skin</code></td><td>object <span class="props">{id, name}</span></td><td>No</td><td></td><td></td></tr><tr><td><code>fullscreen</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>stereoscopicmode</code></td><td><a href="../../v13/types/GUI.Stereoscopy.Mode.html">GUI.Stereoscopy.Mode</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/GUI.GetProperties.html">GUI.GetProperties</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;currentwindow&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;id&quot;: {
+          &quot;type&quot;: &quot;integer&quot;
+        },
+        &quot;label&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;id&quot;,
+        &quot;label&quot;
+      ]
+    },
+    &quot;currentcontrol&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;label&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;label&quot;
+      ]
+    },
+    &quot;skin&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;id&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;minLength&quot;: 1
+        },
+        &quot;name&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;id&quot;
+      ]
+    },
+    &quot;fullscreen&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;stereoscopicmode&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/GUI.Stereoscopy.Mode&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

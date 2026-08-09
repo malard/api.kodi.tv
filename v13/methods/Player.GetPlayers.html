@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.GetPlayers - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">13.15.0</span><nav><a href="../../v13/methods/index.html">Methods</a> <a href="../../v13/notifications/index.html">Notifications</a> <a href="../../v13/types/index.html">Types</a> <a href="../../v13/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.GetPlayers</h1><p>Get a list of available players</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;Player.GetPlayers&quot;,
+  &quot;params&quot;: {
+    &quot;media&quot;: &quot;&lt;\&quot;all\&quot; | \&quot;video\&quot; | \&quot;audio\&quot;&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>media</code></td><td><code>&quot;all&quot;</code> | <code>&quot;video&quot;</code> | <code>&quot;audio&quot;</code></td><td>No</td><td><code>&quot;all&quot;</code></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>array of <span class="constraints">(unique items)</span>:</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td><a href="../../v13/types/Global.String.NotEmpty.html">Global.String.NotEmpty</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>type</code></td><td><code>&quot;internal&quot;</code> | <code>&quot;external&quot;</code> | <code>&quot;remote&quot;</code></td><td>Yes</td><td></td><td></td></tr><tr><td><code>playsvideo</code></td><td>boolean</td><td>Yes</td><td></td><td></td></tr><tr><td><code>playsaudio</code></td><td>boolean</td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Get a list of available players&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;media&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;enum&quot;: [
+          &quot;all&quot;,
+          &quot;video&quot;,
+          &quot;audio&quot;
+        ],
+        &quot;default&quot;: &quot;all&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;array&quot;,
+    &quot;uniqueItems&quot;: true,
+    &quot;items&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;name&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Global.String.NotEmpty&quot;
+        },
+        &quot;type&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;enum&quot;: [
+            &quot;internal&quot;,
+            &quot;external&quot;,
+            &quot;remote&quot;
+          ]
+        },
+        &quot;playsvideo&quot;: {
+          &quot;type&quot;: &quot;boolean&quot;
+        },
+        &quot;playsaudio&quot;: {
+          &quot;type&quot;: &quot;boolean&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;name&quot;,
+        &quot;type&quot;,
+        &quot;playsvideo&quot;,
+        &quot;playsaudio&quot;
+      ]
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>
