@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AudioLibrary.SetSongDetails - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#AudioLibrary">AudioLibrary</a></p><h1>AudioLibrary.SetSongDetails</h1><p>Update the given song with the given details</p><p class="meta"><span class="badge">Permission: UpdateData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;AudioLibrary.SetSongDetails&quot;,
+  &quot;params&quot;: {
+    &quot;songid&quot;: &quot;&lt;Library.Id&gt;&quot;,
+    &quot;title&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;artist&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;genre&quot;: &quot;&lt;null | Array.String&gt;&quot;,
+    &quot;year&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;rating&quot;: &quot;&lt;Optional.Number&gt;&quot;,
+    &quot;track&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;disc&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;duration&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;comment&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;musicbrainztrackid&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;musicbrainzartistid&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;playcount&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;lastplayed&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;userrating&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;votes&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;displayartist&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;sortartist&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;mood&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;art&quot;: &quot;&lt;null | Media.Artwork.Set&gt;&quot;,
+    &quot;disctitle&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;releasedate&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;originaldate&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;bpm&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;songvideourl&quot;: &quot;&lt;Optional.String&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>songid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td>null | <a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>genre</code></td><td>null | <a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>year</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>rating</code></td><td><a href="../../v14/types/Optional.Number.html">Optional.Number</a></td><td>No</td><td></td><td></td></tr><tr><td><code>track</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>disc</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>duration</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>comment</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainztrackid</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainzartistid</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>playcount</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>lastplayed</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>userrating</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>votes</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>displayartist</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>sortartist</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>mood</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>art</code></td><td>null | <a href="../../v14/types/Media.Artwork.Set.html">Media.Artwork.Set</a></td><td>No</td><td><code>null</code></td><td></td></tr><tr><td><code>disctitle</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>releasedate</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>originaldate</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>bpm</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>songvideourl</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Update the given song with the given details&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;UpdateData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;songid&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;title&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;artist&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;genre&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;year&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;rating&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Number&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;track&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;disc&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;duration&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;comment&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;musicbrainztrackid&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;musicbrainzartistid&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;playcount&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;lastplayed&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;userrating&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;votes&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;displayartist&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;sortartist&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;mood&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;art&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Media.Artwork.Set&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    },
+    {
+      &quot;name&quot;: &quot;disctitle&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;releasedate&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;originaldate&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;bpm&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;songvideourl&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

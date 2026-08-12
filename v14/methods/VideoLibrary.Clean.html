@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.Clean - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.Clean</h1><p>Cleans the video library for non-existent items</p><p class="meta"><span class="badge">Permission: RemoveData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;VideoLibrary.Clean&quot;,
+  &quot;params&quot;: {
+    &quot;showdialogs&quot;: &quot;&lt;boolean&gt;&quot;,
+    &quot;content&quot;: &quot;&lt;\&quot;video\&quot; | \&quot;movies\&quot; | \&quot;tvshows\&quot; | \&quot;musicvideos\&quot;&gt;&quot;,
+    &quot;directory&quot;: &quot;&lt;string&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>showdialogs</code></td><td>boolean</td><td>No</td><td><code>true</code></td><td>Whether or not to show the progress bar or any other GUI dialog</td></tr><tr><td><code>content</code></td><td><code>&quot;video&quot;</code> | <code>&quot;movies&quot;</code> | <code>&quot;tvshows&quot;</code> | <code>&quot;musicvideos&quot;</code></td><td>No</td><td><code>&quot;video&quot;</code></td><td>Content type to clean for</td></tr><tr><td><code>directory</code></td><td>string</td><td>No</td><td><code>&quot;&quot;</code></td><td>Path to the directory to clean up; performs a global cleanup if not specified</td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Cleans the video library for non-existent items&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;RemoveData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;showdialogs&quot;,
+      &quot;description&quot;: &quot;Whether or not to show the progress bar or any other GUI dialog&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: true
+      }
+    },
+    {
+      &quot;name&quot;: &quot;content&quot;,
+      &quot;description&quot;: &quot;Content type to clean for&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;video&quot;,
+        &quot;enum&quot;: [
+          &quot;video&quot;,
+          &quot;movies&quot;,
+          &quot;tvshows&quot;,
+          &quot;musicvideos&quot;
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;directory&quot;,
+      &quot;description&quot;: &quot;Path to the directory to clean up; performs a global cleanup if not specified&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

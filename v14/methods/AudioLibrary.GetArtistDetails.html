@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AudioLibrary.GetArtistDetails - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#AudioLibrary">AudioLibrary</a></p><h1>AudioLibrary.GetArtistDetails</h1><p>Retrieve details about a specific artist</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;AudioLibrary.GetArtistDetails&quot;,
+  &quot;params&quot;: {
+    &quot;artistid&quot;: &quot;&lt;Library.Id&gt;&quot;,
+    &quot;properties&quot;: &quot;&lt;Audio.Fields.Artist&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>artistid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>properties</code></td><td><a href="../../v14/types/Audio.Fields.Artist.html">Audio.Fields.Artist</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>artistdetails</code></td><td><a href="../../v14/types/Audio.Details.Artist.html">Audio.Details.Artist</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Retrieve details about a specific artist&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;artistid&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;properties&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Audio.Fields.Artist&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;artistdetails&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Audio.Details.Artist&quot;
+      }
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

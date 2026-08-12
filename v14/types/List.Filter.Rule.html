@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List.Filter.Rule - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#List">List</a></p><h1>List.Filter.Rule</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>operator</code></td><td><a href="../../v14/types/List.Filter.Operators.html">List.Filter.Operators</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>value</code></td><td>string | array of string</td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/List.Filter.Rule.Movies.html">List.Filter.Rule.Movies</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.TVShows.html">List.Filter.Rule.TVShows</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.Episodes.html">List.Filter.Rule.Episodes</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.MusicVideos.html">List.Filter.Rule.MusicVideos</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.Artists.html">List.Filter.Rule.Artists</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.Albums.html">List.Filter.Rule.Albums</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.Songs.html">List.Filter.Rule.Songs</a> <span class="muted">(type)</span></li><li><a href="../types/List.Filter.Rule.Textures.html">List.Filter.Rule.Textures</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;operator&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/List.Filter.Operators&quot;
+    },
+    &quot;value&quot;: {
+      &quot;anyOf&quot;: [
+        {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        {
+          &quot;type&quot;: &quot;array&quot;,
+          &quot;items&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          }
+        }
+      ]
+    }
+  },
+  &quot;required&quot;: [
+    &quot;operator&quot;,
+    &quot;value&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

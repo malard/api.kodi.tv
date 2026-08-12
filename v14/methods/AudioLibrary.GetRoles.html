@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AudioLibrary.GetRoles - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#AudioLibrary">AudioLibrary</a></p><h1>AudioLibrary.GetRoles</h1><p>Retrieve all contributor roles</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;AudioLibrary.GetRoles&quot;,
+  &quot;params&quot;: {
+    &quot;properties&quot;: &quot;&lt;Audio.Fields.Role&gt;&quot;,
+    &quot;limits&quot;: &quot;&lt;List.Limits&gt;&quot;,
+    &quot;sort&quot;: &quot;&lt;List.Sort&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>properties</code></td><td><a href="../../v14/types/Audio.Fields.Role.html">Audio.Fields.Role</a></td><td>No</td><td></td><td></td></tr><tr><td><code>limits</code></td><td><a href="../../v14/types/List.Limits.html">List.Limits</a></td><td>No</td><td></td><td></td></tr><tr><td><code>sort</code></td><td><a href="../../v14/types/List.Sort.html">List.Sort</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>limits</code></td><td><a href="../../v14/types/List.LimitsReturned.html">List.LimitsReturned</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>roles</code></td><td>array of <a href="../../v14/types/Audio.Details.Role.html">Audio.Details.Role</a></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Retrieve all contributor roles&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;properties&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Audio.Fields.Role&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;limits&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.Limits&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;sort&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.Sort&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;limits&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/List.LimitsReturned&quot;
+      },
+      &quot;roles&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;items&quot;: {
+          &quot;$ref&quot;: &quot;#/$defs/Audio.Details.Role&quot;
+        }
+      }
+    },
+    &quot;required&quot;: [
+      &quot;limits&quot;,
+      &quot;roles&quot;
+    ]
+  }
+}</code></pre></details></main>
+</body>
+</html>

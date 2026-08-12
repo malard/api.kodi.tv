@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playlist.Property.Value - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Playlist">Playlist</a></p><h1>Playlist.Property.Value</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><a href="../../v14/types/Playlist.Type.html">Playlist.Type</a></td><td>No</td><td></td><td></td></tr><tr><td><code>size</code></td><td>integer <span class="constraints">(minimum: 0)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>repeat</code></td><td><a href="../../v14/types/Player.Repeat.html">Player.Repeat</a></td><td>No</td><td></td><td></td></tr><tr><td><code>shuffled</code></td><td>boolean</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Playlist.GetProperties.html">Playlist.GetProperties</a> <span class="muted">(method)</span></li><li><a href="../notifications/Playlist.OnPropertyChanged.html">Playlist.OnPropertyChanged</a> <span class="muted">(notification)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;type&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Playlist.Type&quot;
+    },
+    &quot;size&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 0
+    },
+    &quot;repeat&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Player.Repeat&quot;
+    },
+    &quot;shuffled&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

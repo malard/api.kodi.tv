@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio.Details.Song - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Audio">Audio</a></p><h1>Audio.Details.Song</h1><p>Extends <a href="../../v14/types/Audio.Details.Media.html">Audio.Details.Media</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>songid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>file</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>albumartist</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>album</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>track</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>duration</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>comment</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>lyrics</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>playcount</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainztrackid</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainzartistid</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>albumid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>lastplayed</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>disc</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>albumartistid</code></td><td><a href="../../v14/types/Array.Integer.html">Array.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>albumreleasetype</code></td><td><a href="../../v14/types/Audio.Album.ReleaseType.html">Audio.Album.ReleaseType</a></td><td>No</td><td></td><td></td></tr><tr><td><code>mood</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>contributors</code></td><td><a href="../../v14/types/Audio.Contributors.html">Audio.Contributors</a></td><td>No</td><td></td><td></td></tr><tr><td><code>displaycomposer</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>displayconductor</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>displayorchestra</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>displaylyricist</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>genreid</code></td><td><a href="../../v14/types/Array.Integer.html">Array.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>sourceid</code></td><td><a href="../../v14/types/Array.Integer.html">Array.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>disctitle</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>bpm</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>samplerate</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>bitrate</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>channels</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>songvideourl</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/AudioLibrary.GetSongs.html">AudioLibrary.GetSongs</a> <span class="muted">(method)</span></li><li><a href="../methods/AudioLibrary.GetSongDetails.html">AudioLibrary.GetSongDetails</a> <span class="muted">(method)</span></li><li><a href="../methods/AudioLibrary.GetRecentlyAddedSongs.html">AudioLibrary.GetRecentlyAddedSongs</a> <span class="muted">(method)</span></li><li><a href="../methods/AudioLibrary.GetRecentlyPlayedSongs.html">AudioLibrary.GetRecentlyPlayedSongs</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Audio.Details.Media&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;songid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;file&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;albumartist&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;album&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;track&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;duration&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;comment&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;lyrics&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;playcount&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;musicbrainztrackid&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;musicbrainzartistid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;albumid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;lastplayed&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;disc&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;albumartistid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.Integer&quot;
+    },
+    &quot;albumreleasetype&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Audio.Album.ReleaseType&quot;
+    },
+    &quot;mood&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;contributors&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Audio.Contributors&quot;
+    },
+    &quot;displaycomposer&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;displayconductor&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;displayorchestra&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;displaylyricist&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;genreid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.Integer&quot;
+    },
+    &quot;sourceid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.Integer&quot;
+    },
+    &quot;disctitle&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;bpm&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;samplerate&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;bitrate&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;channels&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;songvideourl&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;songid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

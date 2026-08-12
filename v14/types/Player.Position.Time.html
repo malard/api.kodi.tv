@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.Position.Time - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.Position.Time</h1><p>A position in duration.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>hours</code></td><td>integer <span class="constraints">(minimum: 0)</span></td><td>No</td><td><code>0</code></td><td></td></tr><tr><td><code>minutes</code></td><td>integer <span class="constraints">(minimum: 0; maximum: 59)</span></td><td>No</td><td><code>0</code></td><td></td></tr><tr><td><code>seconds</code></td><td>integer <span class="constraints">(minimum: 0; maximum: 59)</span></td><td>No</td><td><code>0</code></td><td></td></tr><tr><td><code>milliseconds</code></td><td>integer <span class="constraints">(minimum: 0; maximum: 999)</span></td><td>No</td><td><code>0</code></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Player.Open.html">Player.Open</a> <span class="muted">(method)</span></li><li><a href="../methods/Player.Seek.html">Player.Seek</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;A position in duration.&quot;,
+  &quot;additionalProperties&quot;: false,
+  &quot;properties&quot;: {
+    &quot;hours&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 0,
+      &quot;default&quot;: 0
+    },
+    &quot;minutes&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 0,
+      &quot;maximum&quot;: 59,
+      &quot;default&quot;: 0
+    },
+    &quot;seconds&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 0,
+      &quot;maximum&quot;: 59,
+      &quot;default&quot;: 0
+    },
+    &quot;milliseconds&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 0,
+      &quot;maximum&quot;: 999,
+      &quot;default&quot;: 0
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.RefreshMovie - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.RefreshMovie</h1><p>Refresh the given movie in the library. Use VideoLibrary.Refresh instead.</p><p class="deprecated"><strong>Deprecated.</strong> Still served, but it will be removed in the next major version of the API. The description says what to use instead.</p><p class="meta"><span class="badge">Permission: UpdateData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;VideoLibrary.RefreshMovie&quot;,
+  &quot;params&quot;: {
+    &quot;movieid&quot;: &quot;&lt;Library.Id&gt;&quot;,
+    &quot;ignorenfo&quot;: &quot;&lt;boolean&gt;&quot;,
+    &quot;title&quot;: &quot;&lt;string&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>movieid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>ignorenfo</code></td><td>boolean</td><td>No</td><td><code>false</code></td><td>Whether or not to ignore a local NFO if present.</td></tr><tr><td><code>title</code></td><td>string</td><td>No</td><td><code>&quot;&quot;</code></td><td>Title to use for searching (instead of determining it from the item&#x27;s filename/path).</td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Refresh the given movie in the library. Use VideoLibrary.Refresh instead.&quot;,
+  &quot;deprecated&quot;: true,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;UpdateData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;movieid&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;ignorenfo&quot;,
+      &quot;description&quot;: &quot;Whether or not to ignore a local NFO if present.&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;default&quot;: false
+      }
+    },
+    {
+      &quot;name&quot;: &quot;title&quot;,
+      &quot;description&quot;: &quot;Title to use for searching (instead of determining it from the item&#x27;s filename/path).&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

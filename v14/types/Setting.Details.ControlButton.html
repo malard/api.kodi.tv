@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setting.Details.ControlButton - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Setting">Setting</a></p><h1>Setting.Details.ControlButton</h1><p>Extends <a href="../../v14/types/Setting.Details.ControlHeading.html">Setting.Details.ControlHeading</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>&quot;button&quot;</code></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Setting.Details.Control.html">Setting.Details.Control</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Setting.Details.ControlHeading&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;type&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;enum&quot;: [
+        &quot;button&quot;
+      ]
+    }
+  },
+  &quot;required&quot;: [
+    &quot;type&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video.Details.MusicVideo - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Video">Video</a></p><h1>Video.Details.MusicVideo</h1><p>Extends <a href="../../v14/types/Video.Details.File.html">Video.Details.File</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>musicvideoid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>studio</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>year</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>album</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>genre</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>track</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>tag</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>rating</code></td><td>number</td><td>No</td><td></td><td></td></tr><tr><td><code>userrating</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>premiered</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>uniqueid</code></td><td><a href="../../v14/types/Media.UniqueID.html">Media.UniqueID</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/VideoLibrary.GetMusicVideos.html">VideoLibrary.GetMusicVideos</a> <span class="muted">(method)</span></li><li><a href="../methods/VideoLibrary.GetMusicVideoDetails.html">VideoLibrary.GetMusicVideoDetails</a> <span class="muted">(method)</span></li><li><a href="../methods/VideoLibrary.GetRecentlyAddedMusicVideos.html">VideoLibrary.GetRecentlyAddedMusicVideos</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Video.Details.File&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;musicvideoid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;studio&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;year&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;album&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;artist&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;genre&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;track&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;tag&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;rating&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;userrating&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;premiered&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;uniqueid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Media.UniqueID&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;musicvideoid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVR.Details.Recording - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#PVR">PVR</a></p><h1>PVR.Details.Recording</h1><p>Extends <a href="../../v14/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>recordingid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>plot</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>plotoutline</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>genre</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>parentalrating</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>parentalratingcode</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>parentalratingicon</code></td><td>string</td><td>No</td><td></td><td>Image URL for the icon of this recording&#x27;s parental rating, servable by the web server&#x27;s /image/ endpoint. Empty when the rating has no icon.</td></tr><tr><td><code>parentalratingsource</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>playcount</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>resume</code></td><td><a href="../../v14/types/Video.Resume.html">Video.Resume</a></td><td>No</td><td></td><td></td></tr><tr><td><code>channel</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>starttime</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>endtime</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>runtime</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>lifetime</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>icon</code></td><td>string</td><td>No</td><td></td><td>Image URL for the recording&#x27;s own icon, servable by the web server&#x27;s /image/ endpoint.</td></tr><tr><td><code>art</code></td><td><a href="../../v14/types/Media.Artwork.html">Media.Artwork</a></td><td>No</td><td></td><td></td></tr><tr><td><code>streamurl</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>file</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>directory</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>radio</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>isdeleted</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>epgeventid</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>channeluid</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>season</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>episode</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>showtitle</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>clientid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/PVR.GetRecordings.html">PVR.GetRecordings</a> <span class="muted">(method)</span></li><li><a href="../methods/PVR.GetRecordingDetails.html">PVR.GetRecordingDetails</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;recordingid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;plot&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;plotoutline&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;genre&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;parentalrating&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;parentalratingcode&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;parentalratingicon&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for the icon of this recording&#x27;s parental rating, servable by the web server&#x27;s /image/ endpoint. Empty when the rating has no icon.&quot;
+    },
+    &quot;parentalratingsource&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;playcount&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;resume&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Video.Resume&quot;
+    },
+    &quot;channel&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;starttime&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;endtime&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;runtime&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;lifetime&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;icon&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for the recording&#x27;s own icon, servable by the web server&#x27;s /image/ endpoint.&quot;
+    },
+    &quot;art&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Media.Artwork&quot;
+    },
+    &quot;streamurl&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;file&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;directory&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;radio&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;isdeleted&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;epgeventid&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;channeluid&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;season&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;episode&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;showtitle&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;clientid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;recordingid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

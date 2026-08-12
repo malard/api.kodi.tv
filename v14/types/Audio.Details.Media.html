@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio.Details.Media - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Audio">Audio</a></p><h1>Audio.Details.Media</h1><p>Extends <a href="../../v14/types/Audio.Details.Base.html">Audio.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>artist</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>year</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>rating</code></td><td>number</td><td>No</td><td></td><td></td></tr><tr><td><code>musicbrainzalbumartistid</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>artistid</code></td><td><a href="../../v14/types/Array.Integer.html">Array.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>displayartist</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>votes</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>userrating</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>sortartist</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>releasedate</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>originaldate</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Audio.Details.Album.html">Audio.Details.Album</a> <span class="muted">(type)</span></li><li><a href="../types/Audio.Details.Song.html">Audio.Details.Song</a> <span class="muted">(type)</span></li><li><a href="../types/List.Item.Base.html">List.Item.Base</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Audio.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;artist&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;year&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;rating&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;musicbrainzalbumartistid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;artistid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.Integer&quot;
+    },
+    &quot;displayartist&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;votes&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;userrating&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;sortartist&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;releasedate&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;originaldate&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

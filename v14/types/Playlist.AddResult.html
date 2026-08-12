@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playlist.AddResult - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Playlist">Playlist</a></p><h1>Playlist.AddResult</h1><p>The outcome of adding or inserting items. Items that could not be resolved are skipped and named in &quot;unresolved&quot;.</p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>added</code></td><td>integer <span class="constraints">(minimum: 1)</span></td><td>Yes</td><td></td><td>How many items were added. Never zero; a call that adds nothing returns an error.</td></tr><tr><td><code>unresolved</code></td><td>array of <a href="../../v14/types/Playlist.UnresolvedItem.html">Playlist.UnresolvedItem</a></td><td>Yes</td><td></td><td>One entry per item that was not added, in request order. Empty when every item was added.</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Playlist.Add.html">Playlist.Add</a> <span class="muted">(method)</span></li><li><a href="../methods/Playlist.Insert.html">Playlist.Insert</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;The outcome of adding or inserting items. Items that could not be resolved are skipped and named in \&quot;unresolved\&quot;.&quot;,
+  &quot;properties&quot;: {
+    &quot;added&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 1,
+      &quot;description&quot;: &quot;How many items were added. Never zero; a call that adds nothing returns an error.&quot;
+    },
+    &quot;unresolved&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;description&quot;: &quot;One entry per item that was not added, in request order. Empty when every item was added.&quot;,
+      &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Playlist.UnresolvedItem&quot;
+      }
+    }
+  },
+  &quot;required&quot;: [
+    &quot;added&quot;,
+    &quot;unresolved&quot;
+  ],
+  &quot;additionalProperties&quot;: false
+}</code></pre></details></main>
+</body>
+</html>

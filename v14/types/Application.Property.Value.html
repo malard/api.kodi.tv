@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Application.Property.Value - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Application">Application</a></p><h1>Application.Property.Value</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>volume</code></td><td>integer <span class="constraints">(minimum: 0; maximum: 100)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>muted</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>name</code></td><td>string <span class="constraints">(minLength: 1)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>version</code></td><td>object <span class="props">{major, minor, revision, tag, tagversion}</span></td><td>No</td><td></td><td></td></tr><tr><td><code>sorttokens</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td>Articles ignored during sorting when ignorearticle is enabled.</td></tr><tr><td><code>language</code></td><td>string <span class="constraints">(minLength: 1)</span></td><td>No</td><td></td><td>Current language code and region e.g. en_GB</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Application.GetProperties.html">Application.GetProperties</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;volume&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;minimum&quot;: 0,
+      &quot;maximum&quot;: 100
+    },
+    &quot;muted&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1
+    },
+    &quot;version&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;major&quot;: {
+          &quot;type&quot;: &quot;integer&quot;,
+          &quot;minimum&quot;: 0
+        },
+        &quot;minor&quot;: {
+          &quot;type&quot;: &quot;integer&quot;,
+          &quot;minimum&quot;: 0
+        },
+        &quot;revision&quot;: {
+          &quot;type&quot;: [
+            &quot;string&quot;,
+            &quot;integer&quot;
+          ]
+        },
+        &quot;tag&quot;: {
+          &quot;type&quot;: &quot;string&quot;,
+          &quot;enum&quot;: [
+            &quot;prealpha&quot;,
+            &quot;alpha&quot;,
+            &quot;beta&quot;,
+            &quot;releasecandidate&quot;,
+            &quot;stable&quot;
+          ]
+        },
+        &quot;tagversion&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;major&quot;,
+        &quot;minor&quot;,
+        &quot;tag&quot;
+      ]
+    },
+    &quot;sorttokens&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;,
+      &quot;description&quot;: &quot;Articles ignored during sorting when ignorearticle is enabled.&quot;
+    },
+    &quot;language&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 1,
+      &quot;description&quot;: &quot;Current language code and region e.g. en_GB&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List.Item.File - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#List">List</a></p><h1>List.Item.File</h1><p>Extends <a href="../../v14/types/List.Item.Base.html">List.Item.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>filetype</code></td><td><code>&quot;file&quot;</code> | <code>&quot;directory&quot;</code></td><td>Yes</td><td></td><td></td></tr><tr><td><code>size</code></td><td>integer</td><td>No</td><td></td><td>Size of the file in bytes</td></tr><tr><td><code>lastmodified</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>mimetype</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Files.GetDirectory.html">Files.GetDirectory</a> <span class="muted">(method)</span></li><li><a href="../methods/Files.GetFileDetails.html">Files.GetFileDetails</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/List.Item.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;file&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;filetype&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;enum&quot;: [
+        &quot;file&quot;,
+        &quot;directory&quot;
+      ]
+    },
+    &quot;size&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;description&quot;: &quot;Size of the file in bytes&quot;
+    },
+    &quot;lastmodified&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;mimetype&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;file&quot;,
+    &quot;filetype&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

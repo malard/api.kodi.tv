@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Files.SetFileDetails - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Files">Files</a></p><h1>Files.SetFileDetails</h1><p>Update the given specific file with the given details</p><p class="meta"><span class="badge">Permission: UpdateData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;Files.SetFileDetails&quot;,
+  &quot;params&quot;: {
+    &quot;file&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;media&quot;: &quot;&lt;Files.Media&gt;&quot;,
+    &quot;playcount&quot;: &quot;&lt;Optional.Integer&gt;&quot;,
+    &quot;lastplayed&quot;: &quot;&lt;Optional.String&gt;&quot;,
+    &quot;resume&quot;: &quot;&lt;null | Video.Resume&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>file</code></td><td>string</td><td>Yes</td><td></td><td>Full path to the file</td></tr><tr><td><code>media</code></td><td><a href="../../v14/types/Files.Media.html">Files.Media</a></td><td>Yes</td><td></td><td>File type to update correct database. Currently only &quot;video&quot; is supported.</td></tr><tr><td><code>playcount</code></td><td><a href="../../v14/types/Optional.Integer.html">Optional.Integer</a></td><td>No</td><td></td><td></td></tr><tr><td><code>lastplayed</code></td><td><a href="../../v14/types/Optional.String.html">Optional.String</a></td><td>No</td><td></td><td>Setting a valid lastplayed without a playcount will force playcount to 1.</td></tr><tr><td><code>resume</code></td><td>null | <a href="../../v14/types/Video.Resume.html">Video.Resume</a></td><td>No</td><td><code>null</code></td><td></td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Update the given specific file with the given details&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;UpdateData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;file&quot;,
+      &quot;required&quot;: true,
+      &quot;description&quot;: &quot;Full path to the file&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;media&quot;,
+      &quot;required&quot;: true,
+      &quot;description&quot;: &quot;File type to update correct database. Currently only \&quot;video\&quot; is supported.&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Files.Media&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;playcount&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.Integer&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;lastplayed&quot;,
+      &quot;description&quot;: &quot;Setting a valid lastplayed without a playcount will force playcount to 1.&quot;,
+      &quot;schema&quot;: {
+        &quot;$ref&quot;: &quot;#/$defs/Optional.String&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;resume&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;null&quot;
+          },
+          {
+            &quot;$ref&quot;: &quot;#/$defs/Video.Resume&quot;
+          }
+        ],
+        &quot;default&quot;: null
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

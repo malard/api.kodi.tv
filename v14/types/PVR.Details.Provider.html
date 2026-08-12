@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVR.Details.Provider - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#PVR">PVR</a></p><h1>PVR.Details.Provider</h1><p>Extends <a href="../../v14/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>providerid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>clientid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>providername</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>providertype</code></td><td><a href="../../v14/types/PVR.Provider.Type.html">PVR.Provider.Type</a></td><td>No</td><td></td><td></td></tr><tr><td><code>iconpath</code></td><td>string</td><td>No</td><td></td><td>Image URL for the provider&#x27;s own icon, servable by the web server&#x27;s /image/ endpoint.</td></tr><tr><td><code>countries</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td>ISO 3166 country codes this provider serves.</td></tr><tr><td><code>languages</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td>RFC 5646 language codes this provider broadcasts in.</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/PVR.GetProviders.html">PVR.GetProviders</a> <span class="muted">(method)</span></li><li><a href="../methods/PVR.GetProviderDetails.html">PVR.GetProviderDetails</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;providerid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;clientid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;providername&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;providertype&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/PVR.Provider.Type&quot;
+    },
+    &quot;iconpath&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for the provider&#x27;s own icon, servable by the web server&#x27;s /image/ endpoint.&quot;
+    },
+    &quot;countries&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;,
+      &quot;description&quot;: &quot;ISO 3166 country codes this provider serves.&quot;
+    },
+    &quot;languages&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;,
+      &quot;description&quot;: &quot;RFC 5646 language codes this provider broadcasts in.&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;providerid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

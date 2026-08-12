@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GUI.ShowNotification - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#GUI">GUI</a></p><h1>GUI.ShowNotification</h1><p>Shows a GUI notification</p><p class="meta"><span class="badge">Permission: ControlGUI</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><p class="muted">Show a notification in the Kodi GUI</p><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 6,
+  &quot;method&quot;: &quot;GUI.ShowNotification&quot;,
+  &quot;params&quot;: {
+    &quot;title&quot;: &quot;Library update&quot;,
+    &quot;message&quot;: &quot;The video library scan has finished&quot;,
+    &quot;image&quot;: &quot;info&quot;,
+    &quot;displaytime&quot;: 5000
+  }
+}</code></pre><h2>Response</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 6,
+  &quot;result&quot;: &quot;OK&quot;
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>message</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>image</code></td><td><code>&quot;info&quot;</code> | <code>&quot;warning&quot;</code> | <code>&quot;error&quot;</code> | string</td><td>No</td><td><code>&quot;&quot;</code></td><td></td></tr><tr><td><code>displaytime</code></td><td>integer <span class="constraints">(minimum: 1500)</span></td><td>No</td><td><code>5000</code></td><td>The time in milliseconds the notification will be visible</td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Shows a GUI notification&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ControlGUI&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;title&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;message&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;image&quot;,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+              &quot;info&quot;,
+              &quot;warning&quot;,
+              &quot;error&quot;
+            ]
+          },
+          {
+            &quot;type&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;default&quot;: &quot;&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;displaytime&quot;,
+      &quot;description&quot;: &quot;The time in milliseconds the notification will be visible&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;integer&quot;,
+        &quot;minimum&quot;: 1500,
+        &quot;default&quot;: 5000
+      }
+    }
+  ],
+  &quot;returns&quot;: &quot;string&quot;
+}</code></pre></details></main>
+</body>
+</html>

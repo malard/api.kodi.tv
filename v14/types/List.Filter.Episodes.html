@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List.Filter.Episodes - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#List">List</a></p><h1>List.Filter.Episodes</h1><ol class="branches"><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>and</code></td><td>array of <a href="../../v14/types/List.Filter.Episodes.html">List.Filter.Episodes</a> <span class="constraints">(minItems: 1)</span></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>or</code></td><td>array of <a href="../../v14/types/List.Filter.Episodes.html">List.Filter.Episodes</a> <span class="constraints">(minItems: 1)</span></td><td>Yes</td><td></td><td></td></tr></tbody></table></div></li><li><p><a href="../../v14/types/List.Filter.Rule.Episodes.html">List.Filter.Rule.Episodes</a></p></li></ol><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/VideoLibrary.GetEpisodes.html">VideoLibrary.GetEpisodes</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;anyOf&quot;: [
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;and&quot;: {
+          &quot;type&quot;: &quot;array&quot;,
+          &quot;items&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/List.Filter.Episodes&quot;
+          },
+          &quot;minItems&quot;: 1
+        }
+      },
+      &quot;required&quot;: [
+        &quot;and&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;or&quot;: {
+          &quot;type&quot;: &quot;array&quot;,
+          &quot;items&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/List.Filter.Episodes&quot;
+          },
+          &quot;minItems&quot;: 1
+        }
+      },
+      &quot;required&quot;: [
+        &quot;or&quot;
+      ]
+    },
+    {
+      &quot;$ref&quot;: &quot;#/$defs/List.Filter.Rule.Episodes&quot;
+    }
+  ]
+}</code></pre></details></main>
+</body>
+</html>

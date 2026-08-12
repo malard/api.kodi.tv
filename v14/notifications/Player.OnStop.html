@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player.OnStop - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Player">Player</a></p><h1>Player.OnStop</h1><p>Playback of a media item has been stopped. If there is no ID available extra information will be provided.</p><p class="meta"><span class="badge">Transport: WebSocket / TCP only</span></p><p>Server-initiated push message; it is never delivered over HTTP and carries no <code>id</code> member.</p><h2>Message</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;Player.OnStop&quot;,
+  &quot;params&quot;: {
+    &quot;sender&quot;: &quot;&lt;string&gt;&quot;,
+    &quot;data&quot;: &quot;&lt;{item, end}&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>sender</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>data</code></td><td>object <span class="props">{item, end}</span></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;notification&quot;,
+  &quot;description&quot;: &quot;Playback of a media item has been stopped. If there is no ID available extra information will be provided.&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;sender&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;data&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;item&quot;: {
+            &quot;$ref&quot;: &quot;#/$defs/Notifications.Item&quot;
+          },
+          &quot;end&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;,
+            &quot;description&quot;: &quot;Whether the player has reached the end of the playable item(s) or not&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;end&quot;
+        ]
+      }
+    }
+  ],
+  &quot;returns&quot;: null
+}</code></pre></details></main>
+</body>
+</html>

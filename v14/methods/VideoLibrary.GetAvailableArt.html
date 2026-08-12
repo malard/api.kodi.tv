@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoLibrary.GetAvailableArt - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#VideoLibrary">VideoLibrary</a></p><h1>VideoLibrary.GetAvailableArt</h1><p>Retrieve all potential art URLs for a media item by art type</p><p class="meta"><span class="badge">Permission: ReadData</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: 1,
+  &quot;method&quot;: &quot;VideoLibrary.GetAvailableArt&quot;,
+  &quot;params&quot;: {
+    &quot;item&quot;: &quot;&lt;{episodeid} | {tvshowid} | {seasonid} | {movieid} | {setid} | {musicvideoid}&gt;&quot;,
+    &quot;arttype&quot;: &quot;&lt;string&gt;&quot;
+  }
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>item</code></td><td><ul class="branches"><li>object <span class="props">{episodeid}</span></li><li>object <span class="props">{tvshowid}</span></li><li>object <span class="props">{seasonid}</span></li><li>object <span class="props">{movieid}</span></li><li>object <span class="props">{setid}</span></li><li>object <span class="props">{musicvideoid}</span></li></ul></td><td>Yes</td><td></td><td></td></tr><tr><td><code>arttype</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>availableart</code></td><td>array of object <span class="props">{url, arttype, previewurl}</span></td><td>Yes</td><td></td><td></td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;method&quot;,
+  &quot;description&quot;: &quot;Retrieve all potential art URLs for a media item by art type&quot;,
+  &quot;transport&quot;: &quot;Response&quot;,
+  &quot;permission&quot;: &quot;ReadData&quot;,
+  &quot;params&quot;: [
+    {
+      &quot;name&quot;: &quot;item&quot;,
+      &quot;required&quot;: true,
+      &quot;schema&quot;: {
+        &quot;anyOf&quot;: [
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;episodeid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;episodeid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;tvshowid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;tvshowid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;seasonid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;seasonid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;movieid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;movieid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;setid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;setid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          },
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+              &quot;musicvideoid&quot;: {
+                &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+              }
+            },
+            &quot;required&quot;: [
+              &quot;musicvideoid&quot;
+            ],
+            &quot;additionalProperties&quot;: false
+          }
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;arttype&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      }
+    }
+  ],
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;availableart&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;items&quot;: {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;properties&quot;: {
+            &quot;url&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;description&quot;: &quot;URL to the original image&quot;
+            },
+            &quot;arttype&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;previewurl&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;description&quot;: &quot;URL to a preview thumbnail of the image&quot;
+            }
+          },
+          &quot;required&quot;: [
+            &quot;url&quot;,
+            &quot;arttype&quot;
+          ]
+        }
+      }
+    },
+    &quot;required&quot;: [
+      &quot;availableart&quot;
+    ]
+  }
+}</code></pre></details></main>
+</body>
+</html>

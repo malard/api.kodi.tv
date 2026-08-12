@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Favourite.Details.Favourite - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Favourite">Favourite</a></p><h1>Favourite.Details.Favourite</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>Yes</td><td></td><td></td></tr><tr><td><code>type</code></td><td><a href="../../v14/types/Favourite.Type.html">Favourite.Type</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>path</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>window</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>windowparameter</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>thumbnail</code></td><td>string</td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/Favourites.GetFavourites.html">Favourites.GetFavourites</a> <span class="muted">(method)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;type&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Favourite.Type&quot;
+    },
+    &quot;path&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;window&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;windowparameter&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;thumbnail&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;title&quot;,
+    &quot;type&quot;
+  ],
+  &quot;additionalProperties&quot;: false
+}</code></pre></details></main>
+</body>
+</html>

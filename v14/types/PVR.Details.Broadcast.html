@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVR.Details.Broadcast - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#PVR">PVR</a></p><h1>PVR.Details.Broadcast</h1><p>Extends <a href="../../v14/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>broadcastid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>title</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>plot</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>plotoutline</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>starttime</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>endtime</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>runtime</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>progress</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>progresspercentage</code></td><td>number</td><td>No</td><td></td><td></td></tr><tr><td><code>genre</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>episodename</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>episode</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>episodenum</code></td><td>integer</td><td>No</td><td></td><td><span class="badge warn">deprecated</span> Use episode instead</td></tr><tr><td><code>episodepart</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>firstaired</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>hastimer</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>isactive</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>parentalrating</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>parentalratingcode</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>parentalratingicon</code></td><td>string</td><td>No</td><td></td><td>Image URL for the icon of this broadcast&#x27;s parental rating, servable by the web server&#x27;s /image/ endpoint. Empty when the rating has no icon.</td></tr><tr><td><code>parentalratingsource</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>wasactive</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>thumbnail</code></td><td>string</td><td>No</td><td></td><td>Image URL for this broadcast&#x27;s own artwork, servable by the web server&#x27;s /image/ endpoint. Empty when the broadcast has no image.</td></tr><tr><td><code>rating</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>originaltitle</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>cast</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>director</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>writer</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>year</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>imdbnumber</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>hastimerrule</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>hasrecording</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>recording</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>recordingid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td>Identifies the recording of this broadcast for PVR.GetRecordingDetails. -1 when the broadcast has no recording.</td></tr><tr><td><code>isseries</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>isplayable</code></td><td>boolean</td><td>No</td><td></td><td>Deprecated - Use GetBroadcastIsPlayable instead</td></tr><tr><td><code>clientid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr><tr><td><code>hasreminder</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>season</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>seasonnum</code></td><td>integer</td><td>No</td><td></td><td><span class="badge warn">deprecated</span> Use season instead</td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/PVR.GetBroadcasts.html">PVR.GetBroadcasts</a> <span class="muted">(method)</span></li><li><a href="../methods/PVR.GetBroadcastDetails.html">PVR.GetBroadcastDetails</a> <span class="muted">(method)</span></li><li><a href="../types/PVR.Details.Channel.html">PVR.Details.Channel</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;broadcastid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;title&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;plot&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;plotoutline&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;starttime&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;endtime&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;runtime&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;progress&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;progresspercentage&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;genre&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;episodename&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;episode&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;episodenum&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;deprecated&quot;: true,
+      &quot;description&quot;: &quot;Use episode instead&quot;
+    },
+    &quot;episodepart&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;firstaired&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;hastimer&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;isactive&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;parentalrating&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;parentalratingcode&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;parentalratingicon&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for the icon of this broadcast&#x27;s parental rating, servable by the web server&#x27;s /image/ endpoint. Empty when the rating has no icon.&quot;
+    },
+    &quot;parentalratingsource&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;wasactive&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;thumbnail&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for this broadcast&#x27;s own artwork, servable by the web server&#x27;s /image/ endpoint. Empty when the broadcast has no image.&quot;
+    },
+    &quot;rating&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;originaltitle&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;cast&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;director&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;writer&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;year&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;imdbnumber&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;hastimerrule&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;hasrecording&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;recording&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;recordingid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;,
+      &quot;description&quot;: &quot;Identifies the recording of this broadcast for PVR.GetRecordingDetails. -1 when the broadcast has no recording.&quot;
+    },
+    &quot;isseries&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;isplayable&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;,
+      &quot;description&quot;: &quot;Deprecated - Use GetBroadcastIsPlayable instead&quot;
+    },
+    &quot;clientid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;hasreminder&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;season&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;seasonnum&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;deprecated&quot;: true,
+      &quot;description&quot;: &quot;Use season instead&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;broadcastid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio.Details.Base - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#Audio">Audio</a></p><h1>Audio.Details.Base</h1><p>Extends <a href="../../v14/types/Media.Details.Base.html">Media.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>genre</code></td><td><a href="../../v14/types/Array.String.html">Array.String</a></td><td>No</td><td></td><td></td></tr><tr><td><code>dateadded</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>art</code></td><td><a href="../../v14/types/Media.Artwork.html">Media.Artwork</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Audio.Details.Media.html">Audio.Details.Media</a> <span class="muted">(type)</span></li><li><a href="../types/Audio.Details.Artist.html">Audio.Details.Artist</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Media.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;genre&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Array.String&quot;
+    },
+    &quot;dateadded&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;art&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Media.Artwork&quot;
+    }
+  }
+}</code></pre></details></main>
+</body>
+</html>

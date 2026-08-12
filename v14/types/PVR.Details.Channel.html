@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVR.Details.Channel - Kodi JSON-RPC API</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
+<main>
+<p class="crumbs"><a href="index.html#PVR">PVR</a></p><h1>PVR.Details.Channel</h1><p>Extends <a href="../../v14/types/Item.Details.Base.html">Item.Details.Base</a></p><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>channelid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>Yes</td><td></td><td></td></tr><tr><td><code>channel</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>channeltype</code></td><td><a href="../../v14/types/PVR.Channel.Type.html">PVR.Channel.Type</a></td><td>No</td><td></td><td></td></tr><tr><td><code>hidden</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>locked</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>thumbnail</code></td><td>string</td><td>No</td><td></td><td>Image URL for the channel&#x27;s own logo, servable by the web server&#x27;s /image/ endpoint. This is the channel&#x27;s logo, never the currently airing broadcast&#x27;s artwork - for that, read thumbnail from broadcastnow.</td></tr><tr><td><code>lastplayed</code></td><td>string</td><td>No</td><td></td><td></td></tr><tr><td><code>broadcastnow</code></td><td><a href="../../v14/types/PVR.Details.Broadcast.html">PVR.Details.Broadcast</a></td><td>No</td><td></td><td></td></tr><tr><td><code>broadcastnext</code></td><td><a href="../../v14/types/PVR.Details.Broadcast.html">PVR.Details.Broadcast</a></td><td>No</td><td></td><td></td></tr><tr><td><code>channeluid</code></td><td>integer</td><td>Yes</td><td></td><td>The channel&#x27;s own identifier on the client that provides it. A broadcast and a recording report the same value as channeluid. Unrelated to uniqueid on a library item, which is a set of scraper identifiers.</td></tr><tr><td><code>icon</code></td><td>string</td><td>No</td><td></td><td>Image URL for the channel&#x27;s own logo, servable by the web server&#x27;s /image/ endpoint.</td></tr><tr><td><code>channelnumber</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>subchannelnumber</code></td><td>integer</td><td>No</td><td></td><td></td></tr><tr><td><code>isrecording</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>hasarchive</code></td><td>boolean</td><td>No</td><td></td><td></td></tr><tr><td><code>clientid</code></td><td><a href="../../v14/types/Library.Id.html">Library.Id</a></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../methods/PVR.GetChannels.html">PVR.GetChannels</a> <span class="muted">(method)</span></li><li><a href="../methods/PVR.GetChannelDetails.html">PVR.GetChannelDetails</a> <span class="muted">(method)</span></li><li><a href="../types/PVR.Details.ChannelGroup.Extended.html">PVR.Details.ChannelGroup.Extended</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+  &quot;allOf&quot;: [
+    {
+      &quot;$ref&quot;: &quot;#/$defs/Item.Details.Base&quot;
+    }
+  ],
+  &quot;properties&quot;: {
+    &quot;channelid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    },
+    &quot;channel&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;channeltype&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/PVR.Channel.Type&quot;
+    },
+    &quot;hidden&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;locked&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;thumbnail&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for the channel&#x27;s own logo, servable by the web server&#x27;s /image/ endpoint. This is the channel&#x27;s logo, never the currently airing broadcast&#x27;s artwork - for that, read thumbnail from broadcastnow.&quot;
+    },
+    &quot;lastplayed&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;broadcastnow&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/PVR.Details.Broadcast&quot;
+    },
+    &quot;broadcastnext&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/PVR.Details.Broadcast&quot;
+    },
+    &quot;channeluid&quot;: {
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;description&quot;: &quot;The channel&#x27;s own identifier on the client that provides it. A broadcast and a recording report the same value as channeluid. Unrelated to uniqueid on a library item, which is a set of scraper identifiers.&quot;
+    },
+    &quot;icon&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;Image URL for the channel&#x27;s own logo, servable by the web server&#x27;s /image/ endpoint.&quot;
+    },
+    &quot;channelnumber&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;subchannelnumber&quot;: {
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;isrecording&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;hasarchive&quot;: {
+      &quot;type&quot;: &quot;boolean&quot;
+    },
+    &quot;clientid&quot;: {
+      &quot;$ref&quot;: &quot;#/$defs/Library.Id&quot;
+    }
+  },
+  &quot;required&quot;: [
+    &quot;channelid&quot;,
+    &quot;channeluid&quot;
+  ]
+}</code></pre></details></main>
+</body>
+</html>
