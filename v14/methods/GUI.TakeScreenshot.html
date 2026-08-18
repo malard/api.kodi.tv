@@ -9,22 +9,23 @@
 <body>
 <header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
 <main>
-<p class="crumbs"><a href="index.html#GUI">GUI</a></p><h1>GUI.TakeScreenshot</h1><p>Takes a screenshot into the configured screenshot folder</p><p class="meta"><span class="badge">Permission: ControlGUI</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
+<p class="crumbs"><a href="index.html#GUI">GUI</a></p><h1>GUI.TakeScreenshot</h1><p>Takes a screenshot into the configured screenshot folder and answers with the files it wrote. Waits for the capture to be encoded, so every file it names is complete when the response arrives. Pass a returned path to Files.PrepareDownload to fetch the image. Answers Unavailable when no screenshot folder is configured.</p><p class="meta"><span class="badge">Permission: ControlGUI</span> <span class="badge">Transport: Response</span></p><h2>Request</h2><pre><code>{
   &quot;jsonrpc&quot;: &quot;2.0&quot;,
   &quot;id&quot;: 1,
   &quot;method&quot;: &quot;GUI.TakeScreenshot&quot;,
   &quot;params&quot;: {
-    &quot;content&quot;: &quot;&lt;\&quot;composite\&quot; | \&quot;video\&quot; | \&quot;both\&quot;&gt;&quot;
+    &quot;content&quot;: &quot;&lt;\&quot;composite\&quot; | \&quot;video\&quot; | \&quot;both\&quot;&gt;&quot;,
+    &quot;target&quot;: &quot;&lt;string&gt;&quot;
   }
-}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>content</code></td><td><code>&quot;composite&quot;</code> | <code>&quot;video&quot;</code> | <code>&quot;both&quot;</code></td><td>No</td><td><code>&quot;composite&quot;</code></td><td>composite captures the full display output, video only the video frame, both writes two files, the video frame and the full composite, from the same rendered frame. Files are written asynchronously; the method acknowledges the request and does not wait for the write.</td></tr></tbody></table></div><h2>Returns</h2><p>string</p><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
+}</code></pre><h2>Parameters</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>content</code></td><td><code>&quot;composite&quot;</code> | <code>&quot;video&quot;</code> | <code>&quot;both&quot;</code></td><td>No</td><td><code>&quot;composite&quot;</code></td><td>composite captures the full display output, video only the video frame, both writes two files, the video frame and the full composite, from the same rendered frame</td></tr><tr><td><code>target</code></td><td>string</td><td>No</td><td><code>&quot;&quot;</code></td><td>Name to write the screenshot under, which must be a plain .png file name carrying no directory: the file always goes to the configured folder, and an existing one of that name is overwritten. Names the composite, the video frame taking the matching &quot;-video&quot; name. Auto-numbered as screenshotNNNNN.png when omitted. A client capturing repeatedly should name a target and reuse it: the auto-numbered name accumulates files it cannot reclaim without GUI.DeleteScreenshots, costs a directory listing per call, and runs out at 65535.</td></tr></tbody></table></div><h2>Returns</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>composite</code></td><td>string</td><td>No</td><td></td><td>Path of the full display output, under special://screenshots. Absent when only the video frame was captured.</td></tr><tr><td><code>video</code></td><td>string</td><td>No</td><td></td><td>Path of the video frame alone, under special://screenshots. Absent when only the composite was captured.</td></tr></tbody></table></div><h2>Errors</h2><p>Any method can return the <a href="../errors.html">standard errors</a>; <code>-32602</code> (Invalid params) carries structured <code>error.data</code> naming the offending parameter.</p><details><summary>Schema</summary><pre><code>{
   &quot;type&quot;: &quot;method&quot;,
-  &quot;description&quot;: &quot;Takes a screenshot into the configured screenshot folder&quot;,
+  &quot;description&quot;: &quot;Takes a screenshot into the configured screenshot folder and answers with the files it wrote. Waits for the capture to be encoded, so every file it names is complete when the response arrives. Pass a returned path to Files.PrepareDownload to fetch the image. Answers Unavailable when no screenshot folder is configured.&quot;,
   &quot;transport&quot;: &quot;Response&quot;,
   &quot;permission&quot;: &quot;ControlGUI&quot;,
   &quot;params&quot;: [
     {
       &quot;name&quot;: &quot;content&quot;,
-      &quot;description&quot;: &quot;composite captures the full display output, video only the video frame, both writes two files, the video frame and the full composite, from the same rendered frame. Files are written asynchronously; the method acknowledges the request and does not wait for the write.&quot;,
+      &quot;description&quot;: &quot;composite captures the full display output, video only the video frame, both writes two files, the video frame and the full composite, from the same rendered frame&quot;,
       &quot;schema&quot;: {
         &quot;type&quot;: &quot;string&quot;,
         &quot;enum&quot;: [
@@ -34,9 +35,29 @@
         ],
         &quot;default&quot;: &quot;composite&quot;
       }
+    },
+    {
+      &quot;name&quot;: &quot;target&quot;,
+      &quot;description&quot;: &quot;Name to write the screenshot under, which must be a plain .png file name carrying no directory: the file always goes to the configured folder, and an existing one of that name is overwritten. Names the composite, the video frame taking the matching \&quot;-video\&quot; name. Auto-numbered as screenshotNNNNN.png when omitted. A client capturing repeatedly should name a target and reuse it: the auto-numbered name accumulates files it cannot reclaim without GUI.DeleteScreenshots, costs a directory listing per call, and runs out at 65535.&quot;,
+      &quot;schema&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;default&quot;: &quot;&quot;
+      }
     }
   ],
-  &quot;returns&quot;: &quot;string&quot;
+  &quot;returns&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;composite&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;description&quot;: &quot;Path of the full display output, under special://screenshots. Absent when only the video frame was captured.&quot;
+      },
+      &quot;video&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;description&quot;: &quot;Path of the video frame alone, under special://screenshots. Absent when only the composite was captured.&quot;
+      }
+    }
+  }
 }</code></pre></details></main>
 </body>
 </html>
