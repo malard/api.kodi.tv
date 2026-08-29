@@ -9,7 +9,7 @@
 <body>
 <header><div class="inner"><a class="site" href="../../index.html">Kodi JSON-RPC API</a> <span class="badge">14.0.0</span><nav><a href="../../v14/methods/index.html">Methods</a> <a href="../../v14/notifications/index.html">Notifications</a> <a href="../../v14/types/index.html">Types</a> <a href="../../v14/errors.html">Errors</a></nav></div></header>
 <main>
-<p class="crumbs"><a href="index.html#Video">Video</a></p><h1>Video.Streams</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>audio</code></td><td>array of object <span class="props">{codec, language, channels}</span> <span class="constraints">(minItems: 1)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>video</code></td><td>array of object <span class="props">{codec, aspect, width, height, duration, hdrtype}</span> <span class="constraints">(minItems: 1)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>subtitle</code></td><td>array of object <span class="props">{language}</span> <span class="constraints">(minItems: 1)</span></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Video.Details.File.html">Video.Details.File</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
+<p class="crumbs"><a href="index.html#Video">Video</a></p><h1>Video.Streams</h1><div class="tablewrap"><table><thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>audio</code></td><td>array of object <span class="props">{codec, language, channels}</span> <span class="constraints">(minItems: 1)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>video</code></td><td>array of object <span class="props">{codec, aspect, width, height, duration, stereomode, language, hdrtype, hdrdetail}</span> <span class="constraints">(minItems: 1)</span></td><td>No</td><td></td><td></td></tr><tr><td><code>subtitle</code></td><td>array of object <span class="props">{language}</span> <span class="constraints">(minItems: 1)</span></td><td>No</td><td></td><td></td></tr></tbody></table></div><h2>Referenced by</h2><ul class="refs"><li><a href="../types/Video.Details.File.html">Video.Details.File</a> <span class="muted">(type)</span></li></ul><details><summary>Schema</summary><pre><code>{
   &quot;type&quot;: &quot;object&quot;,
   &quot;properties&quot;: {
     &quot;audio&quot;: {
@@ -22,7 +22,8 @@
             &quot;type&quot;: &quot;string&quot;
           },
           &quot;language&quot;: {
-            &quot;type&quot;: &quot;string&quot;
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;BCP 47 language tag (e.g. en), a language only in library values, empty when the stream declares none, passed through unchanged when unrecognized&quot;
           },
           &quot;channels&quot;: {
             &quot;type&quot;: &quot;integer&quot;
@@ -52,7 +53,17 @@
           &quot;duration&quot;: {
             &quot;type&quot;: &quot;integer&quot;
           },
+          &quot;stereomode&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;language&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;BCP 47 language tag (e.g. en), a language only in library values, empty when the stream declares none, passed through unchanged when unrecognized&quot;
+          },
           &quot;hdrtype&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;hdrdetail&quot;: {
             &quot;type&quot;: &quot;string&quot;
           }
         },
@@ -66,7 +77,8 @@
         &quot;type&quot;: &quot;object&quot;,
         &quot;properties&quot;: {
           &quot;language&quot;: {
-            &quot;type&quot;: &quot;string&quot;
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;BCP 47 language tag (e.g. en), a language only in library values, empty when the stream declares none, passed through unchanged when unrecognized&quot;
           }
         },
         &quot;additionalProperties&quot;: false
